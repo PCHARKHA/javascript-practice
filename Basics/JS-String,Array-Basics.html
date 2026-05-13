@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qs 6-8</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            font-size: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        .ui{
+            gap: 10px;
+            margin-top: 20px;
+        }
+        label{
+            color:blue;
+            padding:15px;
+        }
+        button{
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1><mark><u>Practising Q6 TO Q8 of Javascript</u></mark></h1>
+    <!--  __________QS 6 PRACTICE_______________ !-->
+    <p>QS-6)Create a simple program that: Input - A number from the user.
+        Output-Display: Whether the number is positive, negative, or zero
+        Whether it is even or odd
+    </p>
+    <div class="ui">
+    <label for="num">Enter a number:</label>
+    <input type="number" id="num" name="num" placeholder="Enter number here">
+    <button type="button" onclick="checkNumber()">Check</button>
+    </div>
+    <div id="result"></div>
+
+     <!--  __________QS 7 PRACTICE_______________ !-->
+    <p>QS-7)Create a program that: Input- A string from the user<br>
+    Output-Display:Length of the string ,Whether it contains the word "JavaScript",
+            The string in uppercase,The string reversed</p>
+    <div class="ui">
+    <label for="str">Enter a string:</label>
+    <input type="text" id="str" name="str" placeholder="Enter string here">
+    <button type="button" onclick="checkString()">Check</button>
+    </div>
+    <div id="output"></div>
+    <!--  __________QS 8 PRACTICE_______________ !-->
+    <p>QS-8)Create a program that :Input- An array of numbers (hardcoded)<br>
+    Output-Display:All numbers doubled,Only numbers greater than 10,Sum of all numbers using reduce()</p>
+    <div class="ui">
+    <p>Array = [2,5,6,8,10]</p>
+    <button type="button" onclick="checkArray()">Check</button>
+    </div>
+    <div id="arrOutput"></div>
+
+    <script>
+        // function for qs 6
+        function checkNumber(){
+            let num=Number(document.getElementById("num").value);
+            let result="";
+            if(num >0){
+                result = "The number is positive.";
+            } else if(num <0){
+                result = "The number is negative.";
+            } else {
+                result = "The number is zero.";
+            }
+            if (num % 2 === 0){
+                result += " It is an even number.";
+            } else {
+                result += " It is an odd number.";
+            }
+            document.getElementById("result").textContent=result;
+        }
+        //function for Qs7
+        function checkString(){
+            let str = document.getElementById("str").value;
+            let length = str.length;
+            let containsJavaScript = str.includes("JavaScript");
+            let uppercaseStr = str.toUpperCase();
+            let reversedStr = str.split("").reverse().join("");
+
+            let output = `Length of the string: ${length}.<br>
+            The string ${containsJavaScript ? "contains":"does not contain"} the word "JavaScript".<br>
+            The string in uppercase: ${uppercaseStr}.<br>
+            The string reversed: ${reversedStr}`;
+
+            document.getElementById("output").innerHTML=output;
+        }
+        //function for Qs8
+        function checkArray(){
+            let arr=[2,5,6,8,10];
+            let doubled = arr.map(num => num * 2);
+            let greatThan10 =arr.filter(num =>(num>10));
+            let sum = arr.reduce((acc, num) => acc + num, 0);
+
+            let output =`All numbers doubled:  [${doubled}]<br> 
+            Numbers greater than 10 are : ${greatThan10.length >0 ? greatThan10 : "None"}.<br>
+            Sum of all numbers: ${sum}.`;
+
+            document.getElementById("arrOutput").innerHTML=output;
+        }
+    </script>
+    
+</body>
+</html>

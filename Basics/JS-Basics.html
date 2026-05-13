@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practising JS</title>
+</head>
+<body>
+    <p>Qs1)Declare variables for your name, age, and whether you're a student. Print:
+    Hi, I'm Pranjal, I'm 20 years old and I am a student.</p>
+
+    <p id="output"></p>
+    <p>Qs2)Check the type of the following values using typeof:
+    "hello",42,true,null,undefined,[],{}</p>
+    <img src="assets/output.png" alt="output" width="300" height="300">
+
+    <p>Q3)Swap two variables without using a third variable.</p>
+    <img src="assets/swap.png" alt="output" width="300" height="300">
+
+    <p>Q5)Grade Calculator -Create getGrade(score) using if...else if.</p>
+    <label for ="score">Enter your total marks:</label>
+    <input type="number" id="score" name="score">
+    <button type="button" onclick="getGrade()">Get Grade</button>
+
+    <script>
+        //Qs 1
+        let name="Pranjal";
+        let age =19;
+        let isStudent = true;
+        document.getElementById("output").textContent=(`Hi,I'm ${name},I'm ${age} years old 
+                                                        and I am ${isStudent ?"a":"not a"} student.`);
+        // function for Qs5
+        function getGrade(){
+            let score=Number(document.getElementById("score").value);
+            if(score<0 || score>100){
+                alert("Please enter a valid score between 0 and 100.");
+                return;
+            }
+            if( score >= 90){
+                alert("Grade: A");
+            } else if(score >= 80){
+                alert("Grade: B");
+            } else if(score >= 70){
+                alert("Grade: C");
+            } else if(score >= 60){
+                alert("Grade: D");
+            } else {
+                alert("Grade: F");
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

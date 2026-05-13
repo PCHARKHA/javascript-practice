@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            font-size: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        .ui{
+            gap: 10px;
+            margin-top: 20px;
+        }
+        label{
+            color:blue;
+            padding:15px;
+        }
+        button{
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1><mark><u>Function Expressions in JAVASCRIPT</u></mark></h1>
+    <!--QS 1 FUNCTION EXPRESSION-->
+    <div class="ui">
+        <p>QS-1)Create a function expression add that returns the sum of two numbers.</p>
+        <label for ="num1">Enter first number.</label>
+        <input type="number" id="num1" name="num1">
+        <label for ="num2">Enter second number.</label>
+        <input type="number" id="num2" name="num2">
+        <button type="button" onclick="add()">Add</button>
+    </div>
+    <div id="result"></div>
+    <!--QS 2 _________FUNCTION EXPRESSION__________!-->
+    <div class="ui">
+        <p>QS-2)Create a function expression isEven that checks if a number is even.</p>
+        <label for ="num3">Enter a number.</label>
+        <input type="number" id="num3" name="num3">
+        <button type="button" onclick="isEven()">Check Even</button>
+    </div>
+    <div id="result2"></div>
+    <!--QS 3 ___________FUNCTION EXPRESSION_____________!-->
+    <div class ="ui">
+    <p>QS-3)Create a function expression maxOfTwo that returns the larger of two numbers.</p>
+        <label for ="num4">Enter first number.</label>
+        <input type="number" id="num4" name="num4">
+        <label for ="num5">Enter second number.</label>
+        <input type="number" id="num5" name="num5">
+        <button type="button" onclick="maxOfTwo()">Find Max</button>
+    </div>
+    <div id="result3"></div>
+    <!--QS 4 ___________FUNCTION EXPRESSION_____________!-->
+    <div class ="ui">
+    <p>QS-4)Create a function expression reverseString that reverses a given string.</p>
+        <label for ="str1">Enter a string.</label>
+        <input type="text" id="str1" name="str1">
+        <button type="button" onclick="reverseString()">Reverse String</button>
+    </div>
+    <div id="result4"></div>
+    <!--____________________________ARROW FUNCTIONS __________________________________________________!-->
+    <h1><mark><u>Arrow functions in JAVASCRIPT</u></mark></h1>
+    <div class="ui">
+    <p>QS-5)Create an arrow function named square that returns the square of a number.</p>
+        <label for ="num6">Enter a number.</label>
+        <input type="number" id="num6" name="num6">
+        <button type="button" onclick="showSquare()">Square</button>
+    </div>
+    <div id="result5"></div>
+    <!-- QS 6__________________ARROW FUNCTION_______________ !-->
+    <div class="ui">
+    <p>QS-6)Create an arrow function named greet that:<br>
+     Accepts one parameter called name. Returns the string:Hello , name;</p>
+        <label for ="name">Enter your name.</label>
+        <input type="text" id="name" name="name">
+        <button type="button" onclick="showGreeting()">Greet</button>
+    </div>
+    <div id="result6"></div>
+    <!--QS 7 _____________________ARROW FUNCTION_______________-->
+    <div class="ui">
+        <p>QS-7)Create an arrow function named calculateArea that calculates the area of a rectangle.<br>
+        It should accept two parameters: width and height. It should return the area calculated as width * height.</p>
+        <label for ="width">Enter width.</label>
+        <input type="number" id="width" name="width">
+        <label for ="height">Enter height.</label>
+        <input type="number" id="height" name="height">
+        <button type="button" onclick="showArea()">Calculate Area</button>
+    </div>
+    <div id="result7"></div>
+    <!--QS 8 __________________________ ARROW FUNCTION ________________!-->
+    <div class="ui">
+        <p>QS -8)Create an arrow function named countVowels that:<br>
+        Accepts one parameter called text.<br>
+        Returns the number of vowels in the string.<br>
+        Count both uppercase and lowercase vowels:a, e, i, o, u|A, E, I, O, U
+        </p>
+        <label for ="text2">Enter a string.</label>
+        <input type="text" id="text2" name="text2">
+        <button type="button" onclick="countVowels()">Count Vowels</button>
+    </div>
+    <div id="result8"></div>
+
+    <script>
+        //function for QS 1
+        const add = function(a,b){
+            a=Number(document.getElementById("num1").value);
+            b=Number(document.getElementById("num2").value);
+
+            let sum = a+b;
+            document.getElementById("result").textContent =`The sum of ${a} and ${b} is ${sum}.`;
+        }
+        //function for QS 2
+        const isEven = function(n){
+            n=Number(document.getElementById("num3").value);    
+            if(n%2===0){
+                document.getElementById("result2").textContent =`${n} is an even number.`;
+            } else {
+                document.getElementById("result2").textContent =`${n} is an odd number.`;
+            }
+        }
+        //function for QS 3
+        const maxOfTwo= function (a,b){
+            a=Number(document.getElementById("num4").value);
+            b=Number(document.getElementById("num5").value);
+
+            if (a > b){
+                document.getElementById("result3").textContent =`The larger number between ${a} and ${b} is ${a}.`;
+            } else if (b > a){
+                document.getElementById("result3").textContent =`The larger number between ${a} and ${b} is ${b}.`;
+            } else {
+                document.getElementById("result3").textContent =`Both numbers are equal.`;
+            }
+        }
+        //function for QS 4
+        const reverseString =function(str){
+            str=document.getElementById("str1").value;
+            let reversedStr = str.split("").reverse().join("");
+            //why do we use split and join here 
+            /*split("") converts the string into an array of characters, 
+            allowing us to reverse the order of the characters using reverse(). 
+            After reversing, we use join("") to concatenate the characters back into a single string. 
+            This is a common technique for reversing a string in JavaScript.*/
+            document.getElementById("result4").textContent =`The reverse of "${str}" is "${reversedStr}".`;
+        }
+
+        //function for QS 5
+        const square = (n) => n * n; // concise body syntax for arrow function
+        function showSquare(){
+            let n=Number(document.getElementById("num6").value);
+            let squaredValue = square(n);
+            document.getElementById("result5").textContent =`The square of ${n} is ${squaredValue}.`;
+        }
+        // in the above practice, logic of the function and DOM handling is kept separate for better readability and maintainability.
+        //function for QS 6
+        const greet =(name)=> `Hello,${name}!`;
+        function showGreeting(){
+            let name=document.getElementById("name").value;
+            let greetingMessage = greet(name);
+            document.getElementById("result6").textContent =greetingMessage;
+        }
+        //function for QS 7
+        const calculateArea = (width,height) => width * height;
+        function showArea(){
+            let width = Number(document.getElementById("width").value);
+            let height = Number(document.getElementById("height").value);
+            let area = calculateArea(width,height);
+            document.getElementById("result7").textContent =`The area of the rectangle with width ${width} and height ${height} is ${area}.`;
+        }
+        //function for QS 8
+        const countVowelsLogic =(text) =>{
+            let count = 0;
+            const vowels = "aeiouAEIOU";
+
+            for(let char of text){
+                if(vowels.includes(char)){
+                    count++;
+                }
+            }
+            return count;
+        }
+        function countVowels(){
+            let  text=document.getElementById("text2").value;
+            let totalcount =countVowelsLogic(text);
+            document.getElementById("result8").textContent =`The number of vowels in the string "${text}" is ${totalcount}.`;
+    }
+    </script>
+</body>
+</html>
