@@ -6,10 +6,11 @@ let students =[
 ]
 function displayStudents() {
         let tableBody = document.getElementById("studentTableBody");
-        tableBody.innerHTML = "";
+        tableBody.innerHTML = ""; // to clear the table body before adding new rows, so that it does not duplicate the entries when we add or delete students
     
-        students.forEach((student) => {
-            let tableRow = `
+        students.forEach((student) => { 
+//why tableRow is used ? => Code clean aur debuggable rehta hai, required nahi lekin good practice hai
+            let tableRow = `            
                 <tr>
                     <td>${student.ID}</td>
                     <td>${student.name}</td>
@@ -34,6 +35,8 @@ function addStudent(){
         marks:marksip
     }
     students.push(newStudent);
+    // clear useful basically when we want a refresh of input fields after adding a student, 
+    //so that the user can easily add another student without manually clearing the fields
     document.getElementById("name").value = "";
     document.getElementById("marks").value = "";
     displayStudents();
@@ -48,7 +51,6 @@ function deleteStudent(){
 }
 
 function searchStudent(){
-    function searchStudent() {
         let nameInput = document.getElementById("searchName").value;
     
         let matchedStudents = students.filter((student) =>
@@ -60,13 +62,11 @@ function searchStudent(){
             let resultHTML = "";
     
             matchedStudents.forEach((student) => {
-                resultHTML += `
-                    <p>
+                resultHTML += `<p>
                         ID: ${student.ID},
                         Name: ${student.name},
                         Marks: ${student.marks}
-                    </p>
-                `;
+                    </p>`;
             });
     
             resultDiv.innerHTML = resultHTML;
@@ -74,7 +74,6 @@ function searchStudent(){
         else {
             resultDiv.innerHTML = "<p>Student not found in the records.</p>";
         }
-    }
 }
 
 function showPassed(){
