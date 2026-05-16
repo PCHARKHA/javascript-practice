@@ -23,3 +23,8 @@ console.log(allPositive); // true
 // sort
 let sortedArr = arr.sort((a, b) => b - a); // sorts the array in descending order
 console.log(sortedArr); // [5, 4, 3, 2, 1]
+
+//methods that mutate the original array :sort
+//methods that do not mutate the original array : map & filter
+//methods that have boolean return type : some & every
+//methods that return a single value : reduce,find,findIndex

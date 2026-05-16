@@ -1,0 +1,111 @@
+<!-- Problem statement
+ Mini Project 1 — Student Management Dashboard (A small application to manage student records.)
+Objective:Features to Build
+1. Display all students :Render each student as a card or table row.
+2. Add new student -Inputs:Name,Marks
+Append a new object to the array.
+3. Delete student :Remove by id.
+4. Search by name
+Use:filter(),includes(),toLowerCase()
+5. Show only passed students - Marks >= 50.
+6. Sort by marks - Ascending and descending.
+7. Show statistics -Use reduce() to display:
+Total students,Average marks,Highest marks
+8. Highlight toppers : Marks >= 90. !-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management DashBoardt</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            font-size: 18px;
+        }
+        h2{
+            text-align: center;
+            padding :10px;
+            border :solid 5px black;
+            background-color:lightblue;
+        }
+        button{
+            padding :10px;
+            color:white;
+            background-color:blue;
+            border:solid 1px black;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        label{
+            margin-right:10px;
+        }
+         table{
+            width:80%;
+            margin:20px auto;
+            border-collapse:collapse;
+        }
+        th{
+            background-color:lightgray;
+        }
+         td,th{
+            padding:4px;
+            text-align:center;
+        }
+        div{
+            width:80%;
+            margin:20px auto;
+            padding:10px;
+            border:solid 1px black;
+            background-color:lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to the Student Management Dashboard</h2>
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+        </tbody>
+    </table>
+        <br>
+    <button type="button" onclick="displayStudents()">Display All Students</button><br><br>
+
+    <label for ="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="marks">Marks:</label>
+    <input type="number" id="marks" name="marks">
+    <button type ="button" onclick="addStudent()">Add New Student</button><br><br>
+    
+    <label for="id">Enter ID of student to delete:</label>
+    <input type="number" id="id" name="id">
+    <button type ="button" onclick ="deleteStudent()">Delete Student</button><br><br>
+   
+    <label for="searchName">Enter Name of student to Search:</label>
+    <input type="text" id="searchName" name="searchName">
+    <button type="button" onclick="searchStudent()">Search by Name</button><br><br>
+    <div id="searchResult"></div><br><br>
+    
+    <button type="button" onclick="showPassed()">Show Passed Students</button><br><br>
+    <div id="passedResult"></div><br><br>
+
+    <button type="button" onclick="sortMarksAsc()">Sort by Marks (Asc)</button>
+    <button type="button" onclick="sortMarksDesc()">Sort by Marks (Desc)</button><br><br>
+
+    <button type="button" onclick="showStatistics()">Show Statistics</button><br><br>
+    <div id="statisticsResult"></div><br><br>
+
+    <button type="button" onclick="highlightToppers()">Highlight Toppers</button><br><br>
+    <div id="toppersResult"></div><br><br>
+    
+    <script src="Practice-Project01.js"></script>
+
+</body>
+</html>
