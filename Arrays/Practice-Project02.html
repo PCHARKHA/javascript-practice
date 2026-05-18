@@ -1,0 +1,121 @@
+<!-- Mini Project 2 — Product Management Dashboard
+A small application to manage products in an inventory system.
+Objective
+Build a JavaScript application that stores products in an array of objects and allows the user to:
+Add new products
+Delete products
+Search products by name
+Filter products by category
+Sort products by price
+Show statistics : Total Products,Average Price,Highest Price,Lowest Price
+Highlight premium products !-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            font-size: 18px;
+        }
+        h2{
+            text-align: center;
+            padding :10px;
+            border :solid 5px black;
+            background-color:lightblue;
+        }
+        button{
+            padding :10px;
+            color:white;
+            background-color:blue;
+            border:solid 1px black;
+            border-radius:5px;
+            cursor:pointer;
+        }
+        label{
+            margin-right:10px;
+        }
+         table{
+            width:80%;
+            margin:20px auto;
+            border-collapse:collapse;
+        }
+        th{
+            background-color:lightgray;
+        }
+         td,th{
+            padding:4px;
+            text-align:center;
+        }
+        div{
+            width:80%;
+            margin:20px auto;
+            padding:10px;
+            border:solid 1px black;
+            background-color:lightyellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to the Product Management Dashboard</h2>
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody">
+        </tbody>
+    </table>
+        <br>
+    <button type="button" onclick="displayProducts()">Display All Products</button><br><br>
+
+    <label for ="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="category">Category:</label>:</label>
+    <input type="text" id="category" name="category">
+    <label for="price" >Price :</label>
+    <input type="number" id="price" name="price">
+    <button type ="button" onclick="addProduct()">Add New Product</button><br><br>
+    
+    <label for="id">Enter ID of product to delete:</label>
+    <input type="number" id="id" name="id">
+    <button type ="button" onclick ="deleteProduct()">Delete Product</button><br><br>
+   
+    <label for="searchName">Enter Name of Product to Search:</label>
+    <input type="text" id="searchName" name="searchName">
+    <button type="button" onclick="searchProduct()">Search by Name</button><br><br>
+    <div id="searchResult">
+        <p>Loading the search..</p>
+    </div><br><br>
+    
+    <label for="search-category">Enter Category to Search</label>
+    <input type="text" id="search-category" name="search-category">
+    <button type="button" onclick="searchByCategory()">Search or Filter product by category</button><br><br>
+    <div id="categoryResult">
+        <p>Loading the result by category...</p>
+    </div><br><br>
+
+    <button type="button" onclick="sortPriceAsc()">Sort by Price (lowest to highest)</button>
+    <button type="button" onclick="sortPriceDesc()">Sort by Price (highest to lowest)</button><br><br>
+
+    <button type="button" onclick="showStatistics()">Show Statistics</button><br><br>
+    <div id="statisticsResult">
+        <p>Loading the statistics...</p>
+    </div><br><br>
+
+    <button type="button" onclick="highlightPremium()">Highlight Premium Products</button><br><br>
+    <div id="premiumResult">
+        <p>Loading the premium products...</p>
+    </div><br><br>
+    
+    <script src="Practice-Project02.js"></script>
+    
+</body>
+</html>
