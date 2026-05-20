@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-Changing quotes</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #c3cbf0, #764ba2);
+    }
+    .container {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 500px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>View Different Quotes here</h2>
+        <p id="quote"></p>
+    </div>
+
+    <script src = "script3.js"></script>
+    
+</body>
+</html>

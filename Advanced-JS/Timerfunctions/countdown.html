@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #c3cbf0, #764ba2);
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 380px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #2d7533;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #5a67d8;
+        }
+
+        #display {
+            margin-top: 30px;
+            font-size: 64px;
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+    </style>
+</head>
+<body>
+    <div class ="container">
+        <h1>Countdown timer</h1>
+        <label for ="count">Enter time for countdown</label>
+        <input type ="number" id="count" name="count" placeholder="Time in seconds">
+
+        <button type="button" onclick="startCountdown()">Start Countdown</button>
+
+        <h2 id="display">0</h2>
+        <p id="message"></p>
+    </div>
+
+    <script src="countdown.js"></script>
+</body>
+</html>
