@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        function introduce(){
+            console.log(this.name);
+        }
+        const student1 ={
+            name:"Pranjal",
+            introduce:introduce
+        };
+        const student2 ={
+            name:"Rahul",
+            introduce:introduce
+        };
+        student1.introduce();   //this === student1
+        student2.introduce();   //this === student2
+        //this is decided at call time, not definition time.
+
+        //Regular function
+        const student = {
+            name: "Pranjal",
+        
+            greet() {
+                console.log(this.name);
+            }
+        };
+        
+        student.greet();  //Output: Pranjal
+
+        const students = {
+            name: "Pranjal",
+        
+            greet: () => {
+                console.log(this.name);
+            }
+        };
+        
+        students.greet();  //undefined
+        //Arrow functions do NOT create their own this.
+        //They inherit this from the surrounding scope.
+
+
+    </script>
+    
+</body>
+</html>
