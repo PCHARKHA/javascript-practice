@@ -17,7 +17,7 @@ student.greet();  //Pranjal
 const fn = student.greet;
 fn();  // output : undefined
 //Syntax of bind : newFunction = oldFunction.bind(object);
-const bindFn = greet.bind(student);
+const bindFn = student.greet.bind(student);
 bindFn() ; //Pranjal
 //Internally : "Create a new function where this will always be student."
 //Note : bind() does NOT execute the function immediately.It returns a new function.

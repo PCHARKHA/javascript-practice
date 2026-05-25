@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM Practice</title>
+  <style>
+    body{
+        font-family: Arial;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      
+      h2{
+        margin-top: 40px;
+      }
+      
+      .box{
+        width: 250px;
+        padding: 20px;
+        background-color: lightblue;
+        border-radius: 10px;
+        transition: 0.3s;
+      }
+      
+      .dark{
+        background-color: black;
+        color: white;
+      }
+      
+      .active{
+        border: 5px solid green;
+      }
+      
+      .parent{
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      
+      .parent p{
+        background-color: #eee;
+        padding: 10px;
+        margin: 5px 0;
+      }
+      
+      .sibling-box{
+        background-color: white;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 10px;
+      }
+      
+      .card{
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      
+      button{
+        padding: 10px 15px;
+      }
+      
+      #student{
+        background-color: white;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      
+      li{
+        background-color: white;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    </style>
+
+</head>
+<body>
+
+  <h1>DOM Manipulation Practice</h1>
+  <!-- CLASSLIST SECTION -->
+  <h2>classList</h2>
+  <div id="box" class="box">
+    Hello Box
+  </div>
+  <!-- PARENT / CHILD SECTION -->
+  <h2>Parent and Children</h2>
+  <div class="parent">
+    <p>Child 1</p>
+    <p>Child 2</p>
+    <p>Child 3</p>
+  </div>
+
+  <!-- SIBLING SECTION -->
+  <h2>Sibling Elements</h2>
+  <div class="sibling-box">First</div>
+  <div id="middle" class="sibling-box">Middle</div>
+  <div class="sibling-box">Last</div>
+
+  <!-- CLOSEST SECTION -->
+   <h2>closest()</h2>
+   <div class="card">
+   <div class="content">
+    <button id="insideBtn"> Button Inside Card</button>
+   </div>
+
+  </div>
+  <!-- DATASET SECTION -->
+  <h2>dataset</h2>
+  <div id="student"
+       data-name="Pranjal"
+       data-course="JavaScript"
+       data-batch="2026">
+ Student Card
+ </div>
+  <!-- ELEMENT CREATION SECTION -->
+
+  <h2>createElement() and appendChild()</h2>
+  <ul id="list">
+    <li>Existing Item</li>
+  </ul>
+  <script src ="classList.js"></script>
+  <script src ="domTraversal.js"></script>
+
+</body>
+</html>
