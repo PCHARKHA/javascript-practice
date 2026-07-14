@@ -5,9 +5,12 @@ box.classList.add("dark"); // add kiya classlist mai toh ab dark ke bhi styling 
 box.classList.remove("dark"); // same like add
 //Note : Javascript is not removing styles directly , it is removing the class
 // CSS handles style separately & automatically
+box.classList.add("dark");
 
 // classList.toggle() --> if exists then remove OR if does not exist then add
 box.classList.toggle("active"); // adds
 box.classList.toggle("active"); // removes
+box.classList.toggle("active", true); // toggle with forced boolean
+// always adds for true
 
 console.log(box.classList.contains("active")); // return type is boolean

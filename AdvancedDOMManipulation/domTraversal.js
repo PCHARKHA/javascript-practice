@@ -2,7 +2,7 @@
 const parent = document.querySelector(".parent");
 console.log(parent.children);
 // kya return hota hai : An HTMLCollection containing all direct children.
-// only direct children , no direct children are returned
+// only direct children , no grand children are returned
 
 // Access indivisual child
 console.log(parent.children[0]);

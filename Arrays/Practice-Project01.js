@@ -35,7 +35,7 @@ function addStudent(){
         marks:marksip
     }
     students.push(newStudent);
-    // clear useful basically when we want a refresh of input fields after adding a student, 
+    // clear  is useful basically when we want a refresh of input fields after adding a student, 
     //so that the user can easily add another student without manually clearing the fields
     document.getElementById("name").value = "";
     document.getElementById("marks").value = "";
