@@ -1,16 +1,26 @@
+/*classList.add()
+classList.remove()
+classList.toggle()
+classList.contains()
+ */
 
-const box = document.getElementById("box");
-//classList.add() function : adds a class to classlist
-box.classList.add("dark"); // add kiya classlist mai toh ab dark ke bhi styling webpage pe dikhenge
-box.classList.remove("dark"); // same like add
-//Note : Javascript is not removing styles directly , it is removing the class
-// CSS handles style separately & automatically
-box.classList.add("dark");
 
-// classList.toggle() --> if exists then remove OR if does not exist then add
-box.classList.toggle("active"); // adds
-box.classList.toggle("active"); // removes
-box.classList.toggle("active", true); // toggle with forced boolean
-// always adds for true
+const cLBtn = document.getElementById("classListBtn");
+cLBtn.addEventListener("click",function(event){
+    const p1 = document.querySelector(".content");
+    console.log(p1);
+    p1.classList.add("redText");
+});
 
-console.log(box.classList.contains("active")); // return type is boolean
+/* element.classList.remove("className");
+ What is classList.toggle()? It switches a class on and off.
+If the class exists → remove it ====== If the class doesn't exist → add it.
+Syntax : element.classList.toggle("className");
+*/
+
+/*
+classList.contains()
+What is it?---> It checks whether an element currently has a particular class.
+Syntax:element.classList.contains("className");
+It returns a boolean:true → the class exists,false → the class doesn't exist.
+*/

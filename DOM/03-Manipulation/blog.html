@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tech Blog</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            padding:40px;
+            line-height:1.7;
+        }
+
+        .container{
+            max-width:900px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+        }
+
+        h1{
+            color:#1f2937;
+            margin-bottom:10px;
+        }
+
+        .meta{
+            color:gray;
+            margin-bottom:25px;
+        }
+
+        h2{
+            margin-top:25px;
+            color:#374151;
+        }
+
+        p{
+            margin:15px 0;
+        }
+
+        ul{
+            margin-left:25px;
+            margin-top:10px;
+        }
+
+        img{
+            width:100%;
+            margin:20px 0;
+            border-radius:10px;
+        }
+
+        blockquote{
+            background:#f1f5f9;
+            border-left:5px solid #2563eb;
+            padding:15px;
+            margin:20px 0;
+            font-style:italic;
+        }
+
+        .hidden{
+            display:none;
+        }
+
+        button{
+            margin-top:25px;
+            padding:12px 18px;
+            cursor:pointer;
+            border:none;
+            background:#2563eb;
+            color:white;
+            border-radius:5px;
+            font-size:14px;
+        }
+        .redText{
+            color:red;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1 id="blogTitle">Understanding JavaScript DOM Manipulation</h1>
+    <p class="meta">
+        Published:
+        <span id="date">20 July 2026</span>
+        |
+        Author:
+        <span id="author">Pranjal</span>
+    </p>
+
+    <img id="coverImage" src="https://picsum.photos/900/350" alt="Programming Image">
+
+    <h2>Introduction</h2>
+
+    <p id="intro">
+        DOM Manipulation allows JavaScript to read, modify,
+        create and remove HTML elements dynamically.
+    </p>
+
+    <p class="content">
+        Every interactive website uses DOM manipulation.
+        Whether you update a shopping cart, create a to-do list,
+        or display notifications, JavaScript is changing the DOM.
+    </p>
+
+    <p class="content">
+        Learning the DOM is one of the most important steps
+        toward becoming a frontend developer.
+    </p>
+
+    <p id ="hiddenP" class="hidden">This paragraph is hidden using CSS.</p>
+
+    <h2>Topics Covered</h2>
+
+    <ul id="topics">
+        <li>Selectors</li>
+        <li>DOM Traversal</li>
+        <li>DOM Manipulation</li>
+    </ul>
+
+    <h2>Useful Resources</h2>
+
+    <p>Visit
+        <a id="mdnLink" href="https://developer.mozilla.org/" target="_blank"
+        >MDN Documentation</a>
+        for detailed references.
+    </p>
+
+    <blockquote id="quote"> "Consistency beats intensity."</blockquote>
+    <button id="updateBtn">Update Article</button>
+    <button id="removeBtn">Remove Element</button>
+    <button id ="appendBtn">Learn Append</button>
+    <button id = "classListBtn"> Learn classList</button>
+
+    <p id="demo">
+        Hello <span style="display:none">Hidden</span> World
+    </p>
+
+</div>
+    <script src = "attributes.js"></script>
+    <script src = "textContent.js"></script>
+    <script src = "createElement.js"></script>
+    <script src = "removeElement.js"></script>
+    <script src = "innerHTML.js"></script>
+    <script src = "innerText.js"></script>
+    <script src ="classList.js"></script>
+</body>
+</html>
