@@ -5,13 +5,7 @@ const taskList = document.getElementById("taskList");
 
 taskForm.addEventListener("submit", addTask);
 
-function addTask(event){
-    event.preventDefault();
-    const task = taskInput.value.trim();
-    
-    if (task === "") return;
-    taskInput.value = "";
-
+function createTask(taskText, completed = false) {
     const li = document.createElement("li");
     li.classList.add("task");
     taskList.appendChild(li);
@@ -23,35 +17,49 @@ function addTask(event){
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.classList.add("task__checkbox");
+    checkbox.checked = completed;
 
     const span = document.createElement("span");
     span.classList.add("task__text");
-    span.textContent = task;
+    span.textContent = taskText;
 
     label.appendChild(checkbox);
     label.appendChild(span);
 
+    if (completed) {
+        li.classList.add("task--completed");
+    }
+
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("task__delete");
-
     deleteBtn.setAttribute("aria-label", "Delete task");
-    deleteBtn.setAttribute("type", "button"); // prevent it from submitting the form
+    deleteBtn.setAttribute("type", "button");
     deleteBtn.textContent = "×";
 
     li.appendChild(deleteBtn);
-    //When you create an event listener inside a function, it remembers the variables that were available at that moment.
-    deleteBtn.addEventListener("click", function() {
+
+    deleteBtn.addEventListener("click", function () {
         li.remove();
+        saveTasks();
         updateCounts();
     });
 
-    checkbox.addEventListener("change",function(event){
-        li.classList.toggle("task--completed",event.target.checked ); //checkbox.checked);
+    checkbox.addEventListener("change", function (event) {
+        li.classList.toggle("task--completed", event.target.checked);
+        saveTasks();
         updateCounts();
     });
+}
 
-    updateCounts();
+function addTask(event){
+    event.preventDefault();
+    const task = taskInput.value.trim();
     
+    if (task === "") return;
+
+    createTask(task);
+
+    taskInput.value = "";
 }
 
 const totalCount = document.getElementById("totalCount");
@@ -68,3 +76,37 @@ function updateCounts(){
     remainingCount.textContent = remaining;
 
 }
+
+function saveTasks(){
+    const taskArray = [];
+    const allTasks = taskList.querySelectorAll(".task");  // returns NodeList
+
+    allTasks.forEach(function(task) {
+        const taskText = task.querySelector(".task__text").textContent;
+        const completed = task.querySelector(".task__checkbox").checked;
+
+        taskArray.push({
+            text: taskText,
+            completed: completed
+        });
+    });
+    localStorage.setItem("tasks", JSON.stringify(taskArray));
+
+}
+
+
+function loadTasks(){
+    const savedTasks = localStorage.getItem("tasks");
+    if(savedTasks === null){
+        return;
+    }
+
+    const taskArray = JSON.parse(savedTasks);
+    taskArray.forEach(function(task){
+        createTask(task.text, task.completed);
+    });
+
+    updateCounts();
+}
+
+loadTasks();
