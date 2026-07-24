@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Tasks — To-Do List</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="page">
+
+    <section class="card" aria-labelledby="app-title">
+
+      <!-- ---------- HEADER ---------- -->
+      <header class="card__header">
+        <h1 id="app-title" class="card__title">My Tasks</h1>
+        <p class="card__subtitle">Stay on top of your day</p>
+      </header>
+
+      <form class="add-task" id="addTaskForm">
+        <input type="text" id="taskInput"class="add-task__input"
+        placeholder="Add a new task..." autocomplete="off" required />
+
+        <button type="submit" id="addTaskBtn" class="add-task__btn">
+          Add Task
+        </button>
+      </form>
+
+          <!--  Structure reference for JS:
+           <li class="task">
+             <label class="task__left">
+               <input type="checkbox" class="task__checkbox" />
+               <span class="task__text">Task text</span>
+             </label>
+             <button class="task__delete" aria-label="Delete task">...</button>
+           </li>-->
+      <ul class="task-list" id="taskList"></ul>
+
+
+       <!-- ---------- FOOTER ---------- -->
+      <footer class="card__footer">
+        <div class="stat">
+          <span class="stat__value" id="totalCount">--</span>
+          <span class="stat__label">Total</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" id="completedCount">--</span>
+          <span class="stat__label">Completed</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" id="remainingCount">--</span>
+          <span class="stat__label">Remaining</span>
+        </div>
+      </footer>
+
+    </section>
+  </main>
+  <script src = "script.js"></script>
+
+</body>
+</html>
