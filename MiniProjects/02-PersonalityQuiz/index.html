@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Assessment Quiz</title>
+    <link rel = "stylesheet"  href = "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+  <div  id="quiz-container" class="quiz-container">
+
+    <header class="quiz-header">
+      <span class="eyebrow">8-question self check</span>
+      <h1 class="quiz-title">Personality Assessment Quiz</h1>
+      <p class="quiz-subtitle">Answer 8 quick questions and discover your personality type.</p>
+    </header>
+
+    <!-- ===================== Quiz Card (placeholder: question 1) ===================== -->
+    <main class="quiz-card" id="quiz-card">
+
+      <div class="progress-container" id="progress-container">
+        <div class="question-counter">
+          <span>Question <span id="current-question-number">1</span> of <span id="total-question-number">8</span></span>
+          <span class="progress-percentage" id="progress-percentage">12%</span>
+        </div>
+        <div class="progress-bar" id="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <h2 class="question-text" id="question-text">
+        When starting a new project, what's the first thing you do?
+      </h2>
+<!-- ==========OPTIONS ======= -->
+      <div class="options-container" id="options-container"> 
+         <!-- JS will generate option buttons here -->
+      </div>
+    
+      <nav class="navigation-buttons" id="navigation-buttons">
+        <button class="prev-btn" id="prev-btn" disabled>Previous</button>
+        <button class="next-btn" id="next-btn" disabled>Next</button>
+      </nav>
+
+    </main>
+  </div>
+    <!-- ===================== Result Section (hidden by default) ===================== -->
+    <section class="result-container hidden" id="result-container">
+
+      <div class="result-icon" id="result-icon">🎨</div>
+      <p class="result-eyebrow">Your personality type</p>
+      <h2 class="result-title" id="result-title">The Creative Visionary</h2>
+      <p class="result-description" id="result-description">
+        You see possibilities before anyone else does. You're energized by new ideas,
+        comfortable with ambiguity, and happiest when you're making something that
+        didn't exist before.
+      </p>
+
+      <div class="score-breakdown" id="score-breakdown">
+        <p class="score-breakdown-title">Score breakdown</p>
+        <ul class="score-list" id="score-list">
+          <li class="score-item" data-trait="creative">
+            <span class="score-label">Creative</span>
+            <span class="score-track"><span class="score-fill" style="width:75%"></span></span>
+            <span class="score-value">6</span>
+          </li>
+          <li class="score-item" data-trait="analytical">
+            <span class="score-label">Analytical</span>
+            <span class="score-track"><span class="score-fill" style="width:62%"></span></span>
+            <span class="score-value">5</span>
+          </li>
+          <li class="score-item" data-trait="social">
+            <span class="score-label">Social</span>
+            <span class="score-track"><span class="score-fill" style="width:38%"></span></span>
+            <span class="score-value">3</span>
+          </li>
+          <li class="score-item" data-trait="ambitious">
+            <span class="score-label">Ambitious</span>
+            <span class="score-track"><span class="score-fill" style="width:88%"></span></span>
+            <span class="score-value">7</span>
+          </li>
+        </ul>
+      </div>
+
+      <button class="restart-btn" id="restart-btn">Restart Quiz</button>
+
+    </section>
+
+ 
+  <script src = "script.js"></script>
+</body>
+</html>
