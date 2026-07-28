@@ -1,9 +1,10 @@
 # 📝 To-Do List App
 
-A simple and responsive To-Do List application built using **HTML**, **CSS**, and **Vanilla JavaScript**.
+A simple and responsive **To-Do List** application built using **HTML**, **CSS**, and **Vanilla JavaScript**.
 
 The application allows users to add, complete, delete, and persist tasks using the browser's Local Storage.
 
+---
 
 ## 📸 Preview
 
@@ -13,108 +14,60 @@ The application allows users to add, complete, delete, and persist tasks using t
 
 ## 🚀 Features
 
-- ➕ Add new tasks
-- ✅ Mark tasks as completed
-- ❌ Delete tasks
-- 📊 Live task statistics
-  - Total Tasks
-  - Completed Tasks
-  - Remaining Tasks
-- 💾 Data persistence using Local Storage
-- 📱 Responsive UI
+* ➕ Add new tasks
+* ✅ Mark tasks as completed
+* ❌ Delete tasks
+* 📊 Live task statistics
+
+  * Total Tasks
+  * Completed Tasks
+  * Remaining Tasks
+* 💾 Data persistence using Local Storage
+* 📱 Responsive user interface
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- Local Storage API
-
----
-
-## 📂 Project Structure
-
-```
-Todo-List/
-│
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
-
----
-
-## 📸 Preview
-
-(Add a screenshot of your application here.)
-
-Example:
-
-```
-screenshots/app.png
-```
-
----
-
-## 💡 Concepts Practiced
-
-This project helped me practice:
-
-- DOM Manipulation
-- Event Handling
-- Forms
-- Creating Dynamic HTML Elements
-- Event Listeners
-- Closures
-- Query Selectors
-- Class Manipulation
-- JavaScript Objects & Arrays
-- JSON.stringify()
-- JSON.parse()
-- Local Storage
-- Code Refactoring
+* HTML5
+* CSS3
+* JavaScript (ES6)
+* Local Storage API
 
 ---
 
 ## ⚙️ How It Works
 
-1. Enter a task.
-2. Click **Add Task**.
+1. Enter a task in the input field.
+2. Click the **Add Task** button to add it to the list.
 3. Mark tasks as completed using the checkbox.
-4. Delete tasks when finished.
-5. Tasks are automatically saved in Local Storage.
-6. Refreshing the page keeps all tasks intact.
+4. Delete tasks you no longer need.
+5. Task statistics are updated automatically as tasks are added, completed, or deleted.
+6. All tasks are saved in Local Storage, so they remain available even after refreshing the page.
 
 ---
 
-## 📚 What I Learned
+## 💡 Concepts Practiced & Learned
 
-During this project I learned how to:
+During this project, I practiced and learned how to:
 
-- Dynamically create HTML elements using JavaScript.
-- Handle form submission using `preventDefault()`.
-- Work with browser events.
-- Store application state in Local Storage.
-- Convert JavaScript objects to JSON using `JSON.stringify()`.
-- Convert JSON back into JavaScript objects using `JSON.parse()`.
-- Refactor code by separating DOM creation into reusable functions.
+* Manipulate the DOM to dynamically create, update, and remove task elements.
+* Handle user interactions using event listeners.
+* Process form submissions using `preventDefault()`.
+* Work with JavaScript objects and arrays to manage application data.
+* Use query selectors and class manipulation to update the user interface.
+* Store application data in the browser using the Local Storage API.
+* Convert JavaScript objects to JSON using `JSON.stringify()`.
+* Retrieve and restore data using `JSON.parse()`.
+* Keep the user interface synchronized with application state and live task statistics.
+* Organize code into reusable functions for better readability and maintenance.
+* Build a complete CRUD (Create, Read, Update, Delete) application using Vanilla JavaScript.
 
-## ▶️ Running the Project
+---
 
-1. Clone the repository
+## ▶️ Getting Started
 
-```bash
-git clone https://github.com/your-username/todo-list.git
-```
-
-2. Open the project folder.
-
-3. Open `index.html` in your browser.
-
-No additional installation is required.
+Simply download or clone the repository and open `index.html` in your browser.
 
 ---
 
@@ -122,4 +75,4 @@ No additional installation is required.
 
 **Pranjal Charkha**
 
-GitHub: https://github.com/your-username
+GitHub: [PCHARKHA](https://github.com/PCHARKHA)
