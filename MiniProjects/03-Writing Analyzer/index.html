@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="app-header">
+      <h1 id="app-title">Writing Analyzer</h1>
+      <p id="app-description">Paste or type your English text below to analyze it.</p>
+    </header>
+
+    <!-- ===================== INPUT SECTION ===================== -->
+    <main class="app-main">
+
+      <section class="input-section" aria-labelledby="input-label">
+        <label id="input-label" for="text-input" class="visually-hidden">Text input area</label>
+        <textarea
+          id="text-input"
+          class="text-input"
+          rows="12"
+          placeholder="Start typing or paste your text here..."
+        ></textarea>
+
+        <div class="button-row">
+          <button id="clear-btn" type="button" class="btn btn-clear">Clear Text</button>
+        </div>
+      </section>
+
+      <!-- ===================== BASIC STATISTICS ===================== -->
+      <section class="stats-section" aria-labelledby="basic-stats-title">
+        <h2 id="basic-stats-title" class="section-title">Basic Statistics</h2>
+
+        <div class="stats-grid basic-stats-grid">
+
+          <div class="stat-box" id="stat-characters-box">
+            <span class="stat-label">Characters</span>
+            <span class="stat-value" id="stat-characters">0</span>
+          </div>
+
+          <div class="stat-box" id="stat-words-box">
+            <span class="stat-label">Words</span>
+            <span class="stat-value" id="stat-words">0</span>
+          </div>
+
+          <div class="stat-box" id="stat-sentences-box">
+            <span class="stat-label">Sentences</span>
+            <span class="stat-value" id="stat-sentences">0</span>
+          </div>
+
+          <div class="stat-box" id="stat-paragraphs-box">
+            <span class="stat-label">Paragraphs</span>
+            <span class="stat-value" id="stat-paragraphs">0</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================== ADVANCED STATISTICS ===================== -->
+      <section class="stats-section" aria-labelledby="advanced-stats-title">
+        <h2 id="advanced-stats-title" class="section-title">Advanced Statistics</h2>
+
+        <div class="stats-grid advanced-stats-grid">
+
+          <div class="stat-box" id="stat-reading-time-box">
+            <span class="stat-label">Reading Time</span>
+            <span class="stat-value" id="stat-reading-time">Waiting for input...</span>
+          </div>
+
+          <div class="stat-box" id="stat-speaking-time-box">
+            <span class="stat-label">Speaking Time</span>
+            <span class="stat-value" id="stat-speaking-time">Waiting for input...</span>
+          </div>
+
+          <div class="stat-box" id="stat-avg-words-per-sentence-box">
+            <span class="stat-label">Average Words per Sentence</span>
+            <span class="stat-value" id="stat-avg-words-per-sentence">-</span>
+          </div>
+
+          <div class="stat-box" id="stat-longest-sentence-box">
+            <span class="stat-label">Longest Sentence</span>
+            <span class="stat-value" id="stat-longest-sentence">-</span>
+          </div>
+
+          <div class="stat-box" id="stat-longest-word-box">
+            <span class="stat-label">Longest Word</span>
+            <span class="stat-value" id="stat-longest-word">-</span>
+          </div>
+
+          <div class="stat-box" id="stat-vocabulary-richness-box">
+            <span class="stat-label">Vocabulary Richness</span>
+            <span class="stat-value" id="stat-vocabulary-richness">-</span>
+          </div>
+
+          <div class="stat-box" id="stat-most-frequent-words-box">
+            <span class="stat-label">Most Frequent Words</span>
+            <span class="stat-value" id="stat-most-frequent-words">Waiting for input...</span>
+          </div>
+
+          <div class="stat-box" id="stat-filler-words-box">
+            <span class="stat-label">Filler Words</span>
+            <span class="stat-value" id="stat-filler-words">Waiting for input...</span>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <script src = "script.js"></script>
+
+</body>
+</html>
