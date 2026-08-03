@@ -1,0 +1,361 @@
+/* ==========================================================================
+   SmartCart — cart.css
+   ========================================================================== */
+
+   .cart-page {
+    background-color: var(--color-bg);
+  }
+  
+  .cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: var(--space-4);
+    align-items: start;
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  /* Cart Items List                                                       */
+  /* ---------------------------------------------------------------------- */
+  
+  .cart-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .cart-items-list__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .cart-items-list__title {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  
+  .cart-items-list__clear {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-danger);
+  }
+  
+  .cart-items-list__clear:hover {
+    text-decoration: underline;
+  }
+  
+  .cart-item {
+    display: grid;
+    grid-template-columns: 96px 1fr auto auto auto;
+    align-items: center;
+    gap: var(--space-3);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2);
+    transition: box-shadow var(--transition-base);
+  }
+  
+  .cart-item:hover {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .cart-item__media {
+    width: 96px;
+    height: 96px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background-color: var(--color-bg);
+    flex-shrink: 0;
+  }
+  
+  .cart-item__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .cart-item__details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+  
+  .cart-item__category {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+  
+  .cart-item__name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .cart-item__variant {
+    font-size: 12px;
+    color: var(--color-text-muted);
+  }
+  
+  .cart-item__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  
+  .cart-item__price {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  
+  .cart-item__price-old {
+    font-size: 12px;
+    color: var(--color-text-faint);
+    text-decoration: line-through;
+  }
+  
+  .cart-item__quantity {
+    flex-shrink: 0;
+  }
+  
+  .cart-item__total {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text);
+    min-width: 76px;
+    text-align: right;
+  }
+  
+  .cart-item__remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: var(--color-text-faint);
+    font-size: 14px;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+  }
+  
+  .cart-item__remove:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: var(--color-danger);
+  }
+  
+  /* Save-for-later strip inside a cart item */
+  
+  .cart-item__actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .cart-item__save-link {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+  }
+  
+  .cart-item__save-link:hover {
+    color: var(--color-primary);
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  /* Continue shopping link                                                */
+  /* ---------------------------------------------------------------------- */
+  
+  .cart-continue {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: var(--space-2);
+  }
+  
+  .cart-continue i {
+    font-size: 12px;
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  /* Cart Summary (sticky sidebar)                                         */
+  /* ---------------------------------------------------------------------- */
+  
+  .cart-summary {
+    position: sticky;
+    top: calc(var(--navbar-height) + var(--space-2));
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .cart-summary__card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+  }
+  
+  .cart-summary__title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+  }
+  
+  /* Coupon form */
+  
+  .coupon-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .coupon-form__input {
+    flex: 1;
+    height: 44px;
+    padding-inline: 14px;
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    background-color: var(--color-bg);
+    text-transform: uppercase;
+  }
+  
+  .coupon-form__input::placeholder {
+    text-transform: none;
+    color: var(--color-text-faint);
+  }
+  
+  .coupon-form__submit {
+    height: 44px;
+    padding-inline: 18px;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-text);
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+    transition: background-color var(--transition-fast);
+  }
+  
+  .coupon-form__submit:hover {
+    background-color: #111827;
+  }
+  
+  .coupon-applied {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: var(--space-2);
+    padding: 10px 12px;
+    background-color: rgba(34, 197, 94, 0.08);
+    border: 1px dashed var(--color-success);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    color: #16803C;
+  }
+  
+  .coupon-applied i {
+    margin-right: 6px;
+  }
+  
+  .coupon-applied__remove {
+    color: var(--color-danger);
+    font-size: 12px;
+  }
+  
+  /* Order summary */
+  
+  .order-summary__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--color-text-muted);
+    padding-block: 10px;
+  }
+  
+  .order-summary__row span:last-child {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+  
+  .order-summary__row--discount span:last-child {
+    color: var(--color-success);
+  }
+  
+  .order-summary__divider {
+    height: 1px;
+    background-color: var(--color-border);
+    margin-block: var(--space-1);
+  }
+  
+  .order-summary__row--total {
+    padding-top: var(--space-2);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  
+  .order-summary__row--total span:last-child {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-primary);
+  }
+  
+  .cart-summary__checkout-btn {
+    margin-top: var(--space-2);
+  }
+  
+  .cart-summary__secure-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
+  }
+  
+  .cart-summary__secure-note i {
+    color: var(--color-success);
+  }
+  
+  /* Accepted payment icons */
+  
+  .cart-summary__payments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 22px;
+    color: var(--color-text-faint);
+    margin-top: var(--space-2);
+  }
+  
+  /* ---------------------------------------------------------------------- */
+  /* You may also like (upsell strip)                                       */
+  /* ---------------------------------------------------------------------- */
+  
+  .cart-upsell__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3);
+  }

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>SmartCart | Shop Smart, Live Better</title>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+  <!-- Stylesheets -->
+  <link href="css/global.css" rel="stylesheet"/>
+  <link href="css/navbar.css" rel="stylesheet"/>
+  <link href="css/home.css" rel="stylesheet"/>
+  <link href="css/components.css" rel="stylesheet"/>
+  <link href="css/responsive.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- ============================ NAVBAR ============================ -->
+<header class="navbar">
+<div class="container navbar__inner">
+<a class="navbar__logo" href="index.html">
+  <span class="navbar__logo-mark"><i class="fa-solid fa-cart-shopping"></i></span>
+  <span class="navbar__logo-text">Smart<span>Cart</span></span>
+</a>
+  <nav class="navbar-links" id="navbarLinks">
+    <a class="navbar-links__item navbar-links__item--active" href="index.html">Home</a>
+    <a class="navbar-links__item" href="products.html">Shop</a>
+    <a class="navbar-links__item" href="products.html">Categories</a>
+    <a class="navbar-links__item" href="#">Deals</a>
+    <a class="navbar-links__item" href="#">About</a>
+  </nav>
+<div class="search-container" id="searchContainer">
+<form class="search-container__form" role="search">
+<i class="fa-solid fa-magnifying-glass search-container__icon"></i>
+<input class="search-container__input" id="searchInput" placeholder="Search for products, brands and more" type="text"/>
+<button aria-label="Search" class="search-container__submit" type="submit">
+<i class="fa-solid fa-arrow-right"></i>
+</button>
+</form>
+</div>
+<div class="navbar-actions">
+<button aria-label="Toggle search" class="navbar__search-toggle" id="searchToggle">
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+<a aria-label="Wishlist" class="navbar-actions__btn navbar-actions__btn--wishlist" href="wishlist.html">
+<i class="fa-regular fa-heart"></i>
+<span class="navbar-actions__count" id="wishlistCount">3</span>
+</a>
+<a aria-label="Cart" class="navbar-actions__btn navbar-actions__btn--cart" href="cart.html">
+<i class="fa-solid fa-bag-shopping"></i>
+<span class="navbar-actions__count" id="cartCount">2</span>
+</a>
+<button aria-label="Toggle menu" class="navbar__toggle" id="navToggle">
+<i class="fa-solid fa-bars"></i>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- ============================ HERO BANNER ============================ -->
+<section class="hero-banner">
+<div class="container hero-banner__inner">
+<div class="hero-banner__content">
+<span class="hero-banner__badge">
+<i class="fa-solid fa-bolt"></i> Festive Sale Live Now
+          </span>
+<h1 class="hero-banner__title">
+            Everyday essentials,<br/>
+            delivered with <em>care</em>.
+          </h1>
+<p class="hero-banner__subtitle">
+            Curated electronics, fashion and home goods at honest prices — with easy returns
+            and fast delivery across the city.
+          </p>
+<div class="hero-banner__actions">
+<a class="btn btn--primary" href="products.html">
+<i class="fa-solid fa-bag-shopping"></i> Start Shopping
+            </a>
+<a class="btn btn--ghost" href="#featuredCategories">Browse Categories</a>
+</div>
+<div class="hero-banner__stats">
+<div>
+<div class="hero-banner__stat-value">12K+</div>
+<div class="hero-banner__stat-label">Products</div>
+</div>
+<div class="hero-banner__stat-divider"></div>
+<div>
+<div class="hero-banner__stat-value">40K+</div>
+<div class="hero-banner__stat-label">Happy Customers</div>
+</div>
+<div class="hero-banner__stat-divider"></div>
+<div>
+<div class="hero-banner__stat-value">4.8/5</div>
+<div class="hero-banner__stat-label">Average Rating</div>
+</div>
+</div>
+</div>
+<div class="hero-banner__visual">
+<div class="hero-spotlight">
+<span class="hero-spotlight__discount">
+<strong>30%</strong>
+<span>Off Today</span>
+</span>
+<img alt="Featured product" class="hero-spotlight__image" src="assets/images/banners/hero-spotlight.jpg"/>
+<div class="hero-spotlight__float-card">
+<span class="hero-spotlight__float-icon"><i class="fa-solid fa-truck-fast"></i></span>
+<span class="hero-spotlight__float-text">
+<strong>Free Delivery</strong>
+<span>On orders above ₹499</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================ TRUST STRIP ============================ -->
+<section class="trust-strip">
+<div class="container trust-strip__inner">
+<div class="trust-strip__item">
+<i class="fa-solid fa-truck-fast"></i>
+<span><strong>Free Shipping</strong>On orders over ₹499</span>
+</div>
+<div class="trust-strip__item">
+<i class="fa-solid fa-rotate-left"></i>
+<span><strong>Easy Returns</strong>7 day return policy</span>
+</div>
+<div class="trust-strip__item">
+<i class="fa-solid fa-shield-halved"></i>
+<span><strong>Secure Payments</strong>100% protected</span>
+</div>
+<div class="trust-strip__item">
+<i class="fa-solid fa-headset"></i>
+<span><strong>24/7 Support</strong>Always here to help</span>
+</div>
+</div>
+</section>
+<!-- ============================ FEATURED CATEGORIES ============================ -->
+<section class="page-section featured-categories" id="featuredCategories">
+<div class="container">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">Browse</span>
+<h2 class="section-heading">Featured Categories</h2>
+<p class="section-subheading">Shop by category and find exactly what you need</p>
+</div>
+</div>
+<div class="featured-categories__grid">
+<a class="category-tile" data-category="electronics" href="products.html">
+<span class="category-tile__icon"><i class="fa-solid fa-mobile-screen"></i></span>
+<span class="category-tile__name">Electronics</span>
+<span class="category-tile__count">1,240 items</span>
+</a>
+<a class="category-tile" data-category="fashion" href="products.html">
+<span class="category-tile__icon"><i class="fa-solid fa-shirt"></i></span>
+<span class="category-tile__name">Fashion</span>
+<span class="category-tile__count">3,802 items</span>
+</a>
+<a class="category-tile" data-category="home-living" href="products.html">
+<span class="category-tile__icon"><i class="fa-solid fa-couch"></i></span>
+<span class="category-tile__name">Home &amp; Living</span>
+<span class="category-tile__count">960 items</span>
+</a>
+<a class="category-tile" data-category="footwear" href="products.html">
+<span class="category-tile__icon"><i class="fa-solid fa-shoe-prints"></i></span>
+<span class="category-tile__name">Footwear</span>
+<span class="category-tile__count">640 items</span>
+</a>
+<a class="category-tile" data-category="sports" href="products.html">
+<span class="category-tile__icon"><i class="fa-solid fa-baseball"></i></span>
+<span class="category-tile__name">Sports</span>
+<span class="category-tile__count">410 items</span>
+</a>
+<a class="category-tile" data-category="beauty" href="products.html">
+<span class="category-tile__icon"><i class="fa-solid fa-spray-can-sparkles"></i></span>
+<span class="category-tile__name">Beauty</span>
+<span class="category-tile__count">720 items</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ============================ FEATURED PRODUCTS ============================ -->
+<section class="page-section featured-products">
+<div class="container">
+<div class="section-header">
+<div>
+<span class="section-eyebrow">Handpicked</span>
+<h2 class="section-heading">Featured Products</h2>
+<p class="section-subheading">Top rated picks our customers love</p>
+</div>
+<div class="featured-products__tabs">
+<button class="featured-products__tab featured-products__tab--active" data-filter="all">All</button>
+<button class="featured-products__tab" data-filter="new">New</button>
+<button class="featured-products__tab" data-filter="best-seller">Best Sellers</button>
+<button class="featured-products__tab" data-filter="sale">On Sale</button>
+</div>
+</div>
+<div class="featured-products__grid" id="featuredProductsGrid">
+<article class="product-card" data-brand="Noise" data-category="electronics" data-id="1" data-name="Noise Cancelling Wireless Headphones" data-old-price="3999" data-price="2499" data-rating="4.5" data-stock="18">
+<div class="product-card__media">
+<span class="badge badge--accent product-card__badge">Best Seller</span>
+<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="1"><i class="fa-regular fa-heart"></i></button>
+<img alt="Wireless Headphones" class="product-card__image" loading="lazy" src="assets/images/products/product-1.jpg"/>
+</div>
+<div class="product-card__body">
+<span class="product-card__category">Electronics</span>
+<h3 class="product-card__title">Noise Cancelling Wireless Headphones</h3>
+<span class="rating">
+<span class="rating__stars">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+</span>
+                (4.5)
+              </span>
+<div class="product-card__price-row">
+<span class="product-card__price">₹2,499</span>
+<span class="product-card__price-old">₹3,999</span>
+<span class="product-card__price-off">37% off</span>
+</div>
+</div>
+<div class="product-card__footer">
+<div class="quantity-selector">
+<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
+<span class="quantity-selector__value" data-quantity="">1</span>
+<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
+</div>
+<button class="product-card__add-btn" data-id="1"><i class="fa-solid fa-cart-plus"></i> Add</button>
+</div>
+</article>
+<article class="product-card" data-brand="Noise" data-category="electronics" data-id="2" data-name="Smart Fitness Watch Series 5" data-old-price="5499" data-price="4199" data-rating="4.0" data-stock="15">
+<div class="product-card__media">
+<span class="badge badge--success product-card__badge">New</span>
+<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="2"><i class="fa-regular fa-heart"></i></button>
+<img alt="Smart Watch" class="product-card__image" loading="lazy" src="assets/images/products/product-2.jpg"/>
+</div>
+<div class="product-card__body">
+<span class="product-card__category">Electronics</span>
+<h3 class="product-card__title">Smart Fitness Watch Series 5</h3>
+<span class="rating">
+<span class="rating__stars">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+</span>
+                (4.0)
+              </span>
+<div class="product-card__price-row">
+<span class="product-card__price">₹4,199</span>
+<span class="product-card__price-old">₹5,499</span>
+<span class="product-card__price-off">24% off</span>
+</div>
+</div>
+<div class="product-card__footer">
+<div class="quantity-selector">
+<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
+<span class="quantity-selector__value" data-quantity="">1</span>
+<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
+</div>
+<button class="product-card__add-btn" data-id="2"><i class="fa-solid fa-cart-plus"></i> Add</button>
+</div>
+</article>
+<article class="product-card" data-brand="Puma" data-category="footwear" data-id="3" data-name="Men's Air Cushion Running Shoes" data-old-price="2999" data-price="1799" data-rating="5.0" data-stock="22">
+<div class="product-card__media">
+<span class="badge badge--danger product-card__badge">-40%</span>
+<button aria-label="Remove from wishlist" class="product-card__wishlist product-card__wishlist--active" data-id="3"><i class="fa-solid fa-heart"></i></button>
+<img alt="Running Shoes" class="product-card__image" loading="lazy" src="assets/images/products/product-3.jpg"/>
+</div>
+<div class="product-card__body">
+<span class="product-card__category">Footwear</span>
+<h3 class="product-card__title">Men's Air Cushion Running Shoes</h3>
+<span class="rating">
+<span class="rating__stars">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+</span>
+                (5.0)
+              </span>
+<div class="product-card__price-row">
+<span class="product-card__price">₹1,799</span>
+<span class="product-card__price-old">₹2,999</span>
+<span class="product-card__price-off">40% off</span>
+</div>
+</div>
+<div class="product-card__footer">
+<div class="quantity-selector">
+<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
+<span class="quantity-selector__value" data-quantity="">1</span>
+<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
+</div>
+<button class="product-card__add-btn" data-id="3"><i class="fa-solid fa-cart-plus"></i> Add</button>
+</div>
+</article>
+<article class="product-card" data-brand="Urban" data-category="fashion" data-id="4" data-name="Minimalist Leather Backpack" data-old-price="" data-price="3299" data-rating="3.5" data-stock="12">
+<div class="product-card__media">
+<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="4"><i class="fa-regular fa-heart"></i></button>
+<img alt="Leather Backpack" class="product-card__image" loading="lazy" src="assets/images/products/product-4.jpg"/>
+</div>
+<div class="product-card__body">
+<span class="product-card__category">Fashion</span>
+<h3 class="product-card__title">Minimalist Leather Backpack</h3>
+<span class="rating">
+<span class="rating__stars">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i>
+</span>
+                (3.5)
+              </span>
+<div class="product-card__price-row">
+<span class="product-card__price">₹3,299</span>
+</div>
+</div>
+<div class="product-card__footer">
+<div class="quantity-selector">
+<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
+<span class="quantity-selector__value" data-quantity="">1</span>
+<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
+</div>
+<button class="product-card__add-btn" data-id="4"><i class="fa-solid fa-cart-plus"></i> Add</button>
+</div>
+</article>
+</div>
+<div class="featured-products__footer">
+<a class="btn btn--outline" href="products.html">View All Products <i class="fa-solid fa-arrow-right"></i></a>
+</div>
+</div>
+</section>
+<!-- ============================ PROMOTIONAL BANNER ============================ -->
+<section class="page-section">
+<div class="container">
+<div class="promo-banner">
+<div class="promo-banner__content">
+<span class="promo-banner__eyebrow"><i class="fa-solid fa-tag"></i> Limited Time Offer</span>
+<h2 class="promo-banner__title">Get up to <strong>50% off</strong> on your first order</h2>
+<p class="promo-banner__text">Use code <strong>WELCOME50</strong> at checkout. Offer valid on your first purchase only.</p>
+<a class="btn btn--accent" href="products.html">Shop the Sale</a>
+</div>
+<div class="promo-banner__timer">
+<div class="promo-banner__timer-box">
+<strong>02</strong>
+<span>Days</span>
+</div>
+<div class="promo-banner__timer-box">
+<strong>14</strong>
+<span>Hours</span>
+</div>
+<div class="promo-banner__timer-box">
+<strong>36</strong>
+<span>Mins</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================ NEWSLETTER ============================ -->
+<section class="page-section newsletter">
+<div class="container newsletter__inner">
+<div>
+<h3 class="newsletter__title">Stay in the loop</h3>
+<p class="newsletter__text">Get early access to new arrivals and exclusive discounts.</p>
+</div>
+<form class="newsletter__form" id="newsletterForm">
+<input class="newsletter__input" id="newsletterEmail" placeholder="Enter your email address" type="email"/>
+<button class="btn btn--primary" type="submit">Subscribe</button>
+</form>
+</div>
+</section>
+</main>
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+<div class="container site-footer__top">
+<div class="site-footer__col site-footer__col--brand">
+<div class="site-footer__brand">
+<span class="navbar__logo-mark"><i class="fa-solid fa-cart-shopping"></i></span>
+<span class="site-footer__brand-text">Smart<span>Cart</span></span>
+</div>
+<p class="site-footer__about">
+          SmartCart brings you a curated, premium shopping experience — quality products,
+          honest pricing, and delivery you can rely on.
+        </p>
+<div class="site-footer__socials">
+  <a aria-label="Facebook" class="site-footer__social-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+  <a aria-label="Instagram" class="site-footer__social-link" href="#"><i class="fa-brands fa-instagram"></i></a>
+  <a aria-label="Twitter" class="site-footer__social-link" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+  <a aria-label="YouTube" class="site-footer__social-link" href="#"><i class="fa-brands fa-youtube"></i></a>
+</div>
+</div>
+<div class="site-footer__col">
+<h4 class="site-footer__heading">Shop</h4>
+<div class="site-footer__links">
+  <a class="site-footer__link" href="products.html">All Products</a>
+  <a class="site-footer__link" href="products.html">New Arrivals</a>
+  <a class="site-footer__link" href="products.html">Best Sellers</a>
+  <a class="site-footer__link" href="products.html">Deals</a>
+</div>
+</div>
+<div class="site-footer__col">
+<h4 class="site-footer__heading">Support</h4>
+<div class="site-footer__links">
+  <a class="site-footer__link" href="#">Help Center</a>
+  <a class="site-footer__link" href="#">Track Order</a>
+  <a class="site-footer__link" href="#">Returns</a>
+  <a class="site-footer__link" href="#">Shipping Info</a>
+</div>
+</div>
+<div class="site-footer__col">
+<h4 class="site-footer__heading">Company</h4>
+<div class="site-footer__links">
+  <a class="site-footer__link" href="#">About Us</a>
+  <a class="site-footer__link" href="#">Careers</a>
+  <a class="site-footer__link" href="#">Privacy Policy</a>
+  <a class="site-footer__link" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="site-footer__col site-footer__col--contact">
+<h4 class="site-footer__heading">Get in Touch</h4>
+<div class="site-footer__contact-item">
+<i class="fa-solid fa-location-dot"></i>
+<span>Katraj, Pune, Maharashtra, India</span>
+</div>
+<div class="site-footer__contact-item">
+<i class="fa-solid fa-phone"></i>
+<span>+91 XXXXX XXXXX</span>
+</div>
+<div class="site-footer__contact-item">
+<i class="fa-solid fa-envelope"></i>
+<span>support@smartcart.com</span>
+</div>
+</div>
+</div>
+<div class="container site-footer__bottom">
+<span>© 2026 SmartCart. All rights reserved.</span>
+<div class="site-footer__payments">
+  <i class="fa-brands fa-cc-visa"></i>
+  <i class="fa-brands fa-cc-mastercard"></i>
+  <i class="fa-brands fa-cc-paypal"></i>
+  <i class="fa-brands fa-google-pay"></i>
+</div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop">
+<i class="fa-solid fa-arrow-up"></i>
+</button>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Your Wishlist | SmartCart</title>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<!-- Stylesheets -->
+<link href="css/global.css" rel="stylesheet"/>
+<link href="css/navbar.css" rel="stylesheet"/>
+<link href="css/wishlist.css" rel="stylesheet"/>
+<link href="css/components.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+</head>
+<body class="wishlist-page">
+<!-- ============================ NAVBAR ============================ -->
+<header class="navbar">
+<div class="container navbar__inner">
+<a class="navbar__logo" href="index.html">
+<span class="navbar__logo-mark"><i class="fa-solid fa-cart-shopping"></i></span>
+<span class="navbar__logo-text">Smart<span>Cart</span></span>
+</a>
+<nav class="navbar-links" id="navbarLinks">
+<a class="navbar-links__item" href="index.html">Home</a>
+<a class="navbar-links__item" href="products.html">Shop</a>
+<a class="navbar-links__item" href="products.html">Categories</a>
+<a class="navbar-links__item" href="#">Deals</a>
+<a class="navbar-links__item" href="#">About</a>
+</nav>
+<div class="search-container" id="searchContainer">
+<form class="search-container__form" role="search">
+<i class="fa-solid fa-magnifying-glass search-container__icon"></i>
+<input class="search-container__input" id="searchInput" placeholder="Search for products, brands and more" type="text"/>
+<button aria-label="Search" class="search-container__submit" type="submit">
+<i class="fa-solid fa-arrow-right"></i>
+</button>
+</form>
+</div>
+<div class="navbar-actions">
+<button aria-label="Toggle search" class="navbar__search-toggle" id="searchToggle">
+<i class="fa-solid fa-magnifying-glass"></i>
+</button>
+<a aria-label="Wishlist" class="navbar-actions__btn navbar-actions__btn--wishlist" href="wishlist.html">
+<i class="fa-solid fa-heart"></i>
+<span class="navbar-actions__count" id="wishlistCount">4</span>
+</a>
+<a aria-label="Cart" class="navbar-actions__btn navbar-actions__btn--cart" href="cart.html">
+<i class="fa-solid fa-bag-shopping"></i>
+<span class="navbar-actions__count" id="cartCount">3</span>
+</a>
+<button aria-label="Toggle menu" class="navbar__toggle" id="navToggle">
+<i class="fa-solid fa-bars"></i>
+</button>
+</div>
+</div>
+</header>
+<main>
+<div class="container">
+<!-- ============================ BREADCRUMB ============================ -->
+<nav aria-label="Breadcrumb" class="breadcrumb">
+<a class="breadcrumb__link" href="index.html">Home</a>
+<i class="fa-solid fa-chevron-right"></i>
+<span class="breadcrumb__current">Your Wishlist</span>
+</nav>
+<div class="page-heading">
+<div>
+<h1 class="page-heading__title">Your Wishlist</h1>
+</div>
+<span class="page-heading__count" id="wishlistCountText">4 items saved</span>
+</div>
+<div class="wishlist-actions">
+<button class="btn btn--outline btn--sm" id="addAllToCartBtn">
+<i class="fa-solid fa-cart-plus"></i> Add All to Cart
+        </button>
+</div>
+<!-- ============================ WISHLIST GRID ============================ -->
+<div class="wishlist-grid" id="wishlistGrid">
+<article class="wishlist-card" data-brand="Noise" data-category="electronics" data-id="1" data-name="Noise Cancelling Wireless Headphones" data-old-price="3999" data-price="2499" data-rating="4.5" data-stock="18">
+<div class="wishlist-card__media">
+<span class="badge badge--accent wishlist-card__badge">Best Seller</span>
+<button aria-label="Remove from wishlist" class="wishlist-card__remove" data-id="1"><i class="fa-solid fa-xmark"></i></button>
+<img alt="Wireless Headphones" class="wishlist-card__image" loading="lazy" src="assets/images/products/product-1.jpg"/>
+</div>
+<div class="wishlist-card__body">
+<span class="wishlist-card__category">Electronics</span>
+<h3 class="wishlist-card__title">Noise Cancelling Wireless Headphones</h3>
+<div class="wishlist-card__price-row">
+<span class="wishlist-card__price">₹2,499</span>
+<span class="wishlist-card__price-old">₹3,999</span>
+</div>
+<span class="wishlist-card__stock"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+</div>
+<div class="wishlist-card__footer">
+<button class="wishlist-card__add-btn" data-id="1"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+</div>
+</article>
+<article class="wishlist-card" data-brand="Generic" data-category="fashion" data-id="2" data-name="Minimalist Leather Backpack" data-old-price="" data-price="3299" data-rating="3.5" data-stock="12">
+<div class="wishlist-card__media">
+<button aria-label="Remove from wishlist" class="wishlist-card__remove" data-id="2"><i class="fa-solid fa-xmark"></i></button>
+<img alt="Leather Backpack" class="wishlist-card__image" loading="lazy" src="assets/images/products/product-4.jpg"/>
+</div>
+<div class="wishlist-card__body" data-category="electronics" data-id="3" data-name="Noise Cancelling Wireless Headphones" data-price="2499" data-stock="18">
+<span class="wishlist-card__category">Fashion</span>
+<h3 class="wishlist-card__title">Minimalist Leather Backpack</h3>
+<div class="wishlist-card__price-row">
+<span class="wishlist-card__price">₹3,299</span>
+</div>
+<span class="wishlist-card__stock"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+</div>
+<div class="wishlist-card__footer">
+<button class="wishlist-card__add-btn" data-id="2"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+</div>
+</article>
+<article class="wishlist-card" data-brand="GlowCo" data-category="beauty" data-id="3" data-name="Vitamin C Brightening Face Serum" data-old-price="1199" data-price="899" data-rating="4.8" data-stock="25">
+<div class="wishlist-card__media">
+<span class="badge badge--danger wishlist-card__badge">-25%</span>
+<button aria-label="Remove from wishlist" class="wishlist-card__remove" data-id="3"><i class="fa-solid fa-xmark"></i></button>
+<img alt="Face Serum" class="wishlist-card__image" loading="lazy" src="assets/images/products/product-9.jpg"/>
+</div>
+<div class="wishlist-card__body">
+<span class="wishlist-card__category">Beauty</span>
+<h3 class="wishlist-card__title">Vitamin C Brightening Face Serum</h3>
+<div class="wishlist-card__price-row">
+<span class="wishlist-card__price">₹899</span>
+<span class="wishlist-card__price-old">₹1,199</span>
+</div>
+<span class="wishlist-card__stock"><i class="fa-solid fa-circle-check"></i> In Stock</span>
+</div>
+<div class="wishlist-card__footer">
+<button class="wishlist-card__add-btn" data-id="3"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+</div>
+</article>
+<article class="wishlist-card" data-brand="KitchenPro" data-category="home-living" data-id="4" data-name="Non-Stick Ceramic Cookware Set" data-old-price="5299" data-price="3899" data-rating="4.6" data-stock="0">
+<div class="wishlist-card__media">
+<span class="badge badge--success wishlist-card__badge">New</span>
+<button aria-label="Remove from wishlist" class="wishlist-card__remove" data-id="4"><i class="fa-solid fa-xmark"></i></button>
+<img alt="Ceramic Cookware Set" class="wishlist-card__image" loading="lazy" src="assets/images/products/product-7.jpg"/>
+</div>
+<div class="wishlist-card__body">
+<span class="wishlist-card__category">Home &amp; Living</span>
+<h3 class="wishlist-card__title">Non-Stick Ceramic Cookware Set</h3>
+<div class="wishlist-card__price-row">
+<span class="wishlist-card__price">₹3,899</span>
+<span class="wishlist-card__price-old">₹5,299</span>
+</div>
+<span class="wishlist-card__stock wishlist-card__stock--out"><i class="fa-solid fa-circle-xmark"></i> Out of Stock</span>
+</div>
+<div class="wishlist-card__footer">
+<button class="wishlist-card__add-btn" data-id="4" disabled=""><i class="fa-solid fa-cart-plus"></i> Out of Stock</button>
+</div>
+</article>
+</div>
+<!-- ============================ EMPTY STATE (hidden by default, shown when wishlist has 0 items) ============================ -->
+<div class="empty-state" hidden="" id="emptyWishlist"></div>
+</div>
+</main>
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+<div class="container site-footer__top">
+<div class="site-footer__col site-footer__col--brand">
+<div class="site-footer__brand">
+<span class="navbar__logo-mark"><i class="fa-solid fa-cart-shopping"></i></span>
+<span class="site-footer__brand-text">Smart<span>Cart</span></span>
+</div>
+<p class="site-footer__about">
+          SmartCart brings you a curated, premium shopping experience — quality products,
+          honest pricing, and delivery you can rely on.
+        </p>
+<div class="site-footer__socials">
+<a aria-label="Facebook" class="site-footer__social-link" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a aria-label="Instagram" class="site-footer__social-link" href="#"><i class="fa-brands fa-instagram"></i></a>
+<a aria-label="Twitter" class="site-footer__social-link" href="#"><i class="fa-brands fa-x-twitter"></i></a>
+<a aria-label="YouTube" class="site-footer__social-link" href="#"><i class="fa-brands fa-youtube"></i></a>
+</div>
+</div>
+<div class="site-footer__col">
+<h4 class="site-footer__heading">Shop</h4>
+<div class="site-footer__links">
+<a class="site-footer__link" href="products.html">All Products</a>
+<a class="site-footer__link" href="products.html">New Arrivals</a>
+<a class="site-footer__link" href="products.html">Best Sellers</a>
+<a class="site-footer__link" href="products.html">Deals</a>
+</div>
+</div>
+<div class="site-footer__col">
+<h4 class="site-footer__heading">Support</h4>
+<div class="site-footer__links">
+<a class="site-footer__link" href="#">Help Center</a>
+<a class="site-footer__link" href="#">Track Order</a>
+<a class="site-footer__link" href="#">Returns</a>
+<a class="site-footer__link" href="#">Shipping Info</a>
+</div>
+</div>
+<div class="site-footer__col">
+<h4 class="site-footer__heading">Company</h4>
+<div class="site-footer__links">
+<a class="site-footer__link" href="#">About Us</a>
+<a class="site-footer__link" href="#">Careers</a>
+<a class="site-footer__link" href="#">Privacy Policy</a>
+<a class="site-footer__link" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="site-footer__col site-footer__col--contact">
+<h4 class="site-footer__heading">Get in Touch</h4>
+<div class="site-footer__contact-item">
+<i class="fa-solid fa-location-dot"></i>
+<span>Katraj, Pune, Maharashtra, India</span>
+</div>
+<div class="site-footer__contact-item">
+<i class="fa-solid fa-phone"></i>
+<span>+91 XXXXX XXXXX</span>
+</div>
+<div class="site-footer__contact-item">
+<i class="fa-solid fa-envelope"></i>
+<span>support@smartcart.com</span>
+</div>
+</div>
+</div>
+<div class="container site-footer__bottom">
+<span>© 2026 SmartCart. All rights reserved.</span>
+<div class="site-footer__payments">
+<i class="fa-brands fa-cc-visa"></i>
+<i class="fa-brands fa-cc-mastercard"></i>
+<i class="fa-brands fa-cc-paypal"></i>
+<i class="fa-brands fa-google-pay"></i>
+</div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top" id="backToTop">
+<i class="fa-solid fa-arrow-up"></i>
+</button>
+</body>
+</html>
