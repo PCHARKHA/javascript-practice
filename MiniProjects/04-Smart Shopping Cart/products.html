@@ -81,32 +81,36 @@
 <div class="filter-group__title">Category <i class="fa-solid fa-chevron-up"></i></div>
 <div class="filter-group__list">
 <label class="filter-checkbox">
-<input checked="" type="checkbox" value="electronics"/>
+<input checked="" name="category" type="radio" value="all"/>
+                All Categories
+              </label>
+<label class="filter-checkbox">
+<input name="category" type="radio" value="electronics"/>
                 Electronics
                 <span class="filter-checkbox__count">1,240</span>
 </label>
 <label class="filter-checkbox">
-<input type="checkbox" value="fashion"/>
+<input name="category" type="radio" value="fashion"/>
                 Fashion
                 <span class="filter-checkbox__count">3,802</span>
 </label>
 <label class="filter-checkbox">
-<input type="checkbox" value="footwear"/>
+<input name="category" type="radio" value="footwear"/>
                 Footwear
                 <span class="filter-checkbox__count">640</span>
 </label>
 <label class="filter-checkbox">
-<input type="checkbox" value="home-living"/>
+<input name="category" type="radio" value="home-living"/>
                 Home &amp; Living
                 <span class="filter-checkbox__count">960</span>
 </label>
 <label class="filter-checkbox">
-<input type="checkbox" value="sports"/>
+<input name="category" type="radio" value="sports"/>
                 Sports
                 <span class="filter-checkbox__count">410</span>
 </label>
 <label class="filter-checkbox">
-<input type="checkbox" value="beauty"/>
+<input name="category" type="radio" value="beauty"/>
                 Beauty
                 <span class="filter-checkbox__count">720</span>
 </label>
@@ -127,25 +131,45 @@
 <div class="filter-group__title">Brand <i class="fa-solid fa-chevron-up"></i></div>
 <div class="filter-group__list">
 <label class="filter-checkbox">
-<input type="checkbox" value="boat"/>
-                Boat
-                <span class="filter-checkbox__count">86</span>
-</label>
+<input checked="" name="brand" type="radio" value="all"/>
+                All Brands
+              </label>
 <label class="filter-checkbox">
-<input type="checkbox" value="noise"/>
+<input name="brand" type="radio" value="Noise"/>
                 Noise
                 <span class="filter-checkbox__count">64</span>
 </label>
 <label class="filter-checkbox">
-<input type="checkbox" value="puma"/>
+<input name="brand" type="radio" value="Boat"/>
+                Boat
+                <span class="filter-checkbox__count">86</span>
+</label>
+<label class="filter-checkbox">
+<input name="brand" type="radio" value="Puma"/>
                 Puma
                 <span class="filter-checkbox__count">112</span>
 </label>
 <label class="filter-checkbox">
-<input type="checkbox" value="hm"/>
+<input name="brand" type="radio" value="Wildcraft"/>
+                Wildcraft
+              </label>
+<label class="filter-checkbox">
+<input name="brand" type="radio" value="H&amp;M"/>
                 H&amp;M
                 <span class="filter-checkbox__count">203</span>
 </label>
+<label class="filter-checkbox">
+<input name="brand" type="radio" value="Prestige"/>
+                Prestige
+              </label>
+<label class="filter-checkbox">
+<input name="brand" type="radio" value="Boldfit"/>
+                Boldfit
+              </label>
+<label class="filter-checkbox">
+<input name="brand" type="radio" value="Mamaearth"/>
+                Mamaearth
+              </label>
 </div>
 </div>
 <div class="filter-group">
@@ -201,19 +225,14 @@
 </div>
 <div class="products-toolbar__right">
 <div class="sort-dropdown">
-<label for="priceSort">Price</label>
-<select id="priceSort" name="priceSort">
+<label for="sortProducts">Sort By</label>
+<select id="sortProducts" name="sortProducts">
 <option value="default">Default</option>
-<option value="low-high">Low to High</option>
-<option value="high-low">High to Low</option>
-</select>
-</div>
-<div class="sort-dropdown">
-<label for="ratingSort">Rating</label>
-<select id="ratingSort" name="ratingSort">
-<option value="default">Default</option>
-<option value="high-low">High to Low</option>
-<option value="low-high">Low to High</option>
+<option value="price-low-high">Price: Low to High</option>
+<option value="price-high-low">Price: High to Low</option>
+<option value="rating-high-low">Rating: High to Low</option>
+<option value="name-a-z">Name: A to Z</option>
+<option value="name-z-a">Name: Z to A</option>
 </select>
 </div>
 <div class="view-toggle">
@@ -226,15 +245,13 @@
 </div>
 </div>
 </div>
-<div class="active-filters" id="activeFilters">
-<span class="filter-chip">Electronics <button aria-label="Remove Electronics filter"><i class="fa-solid fa-xmark"></i></button></span>
-</div>
+<div class="active-filters" id="activeFilters"></div>
 <div class="products-grid" id="productsGrid">
 <article class="product-card" data-brand="Noise" data-category="electronics" data-id="1" data-name="Noise Cancelling Wireless Headphones" data-old-price="3999" data-price="2499" data-rating="4.5" data-stock="18">
 <div class="product-card__media">
 <span class="badge badge--accent product-card__badge">Best Seller</span>
 <button aria-label="Add to wishlist" class="product-card__wishlist" data-id="1"><i class="fa-regular fa-heart"></i></button>
-<img alt="Wireless Headphones" class="product-card__image" loading="lazy" src="assets/images/products/product-1.jpg"/>
+<img alt="Wireless Headphones" class="product-card__image" loading="lazy" src="assets/images/product-1.png"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Electronics</span>
@@ -264,7 +281,7 @@
 <div class="product-card__media">
 <span class="badge badge--success product-card__badge">New</span>
 <button aria-label="Add to wishlist" class="product-card__wishlist" data-id="2"><i class="fa-regular fa-heart"></i></button>
-<img alt="Smart Watch" class="product-card__image" loading="lazy" src="assets/images/products/product-2.jpg"/>
+<img alt="Smart Watch" class="product-card__image" loading="lazy" src="assets/images/product-2.png"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Electronics</span>
@@ -294,7 +311,7 @@
 <div class="product-card__media">
 <span class="badge badge--danger product-card__badge">-40%</span>
 <button aria-label="Remove from wishlist" class="product-card__wishlist product-card__wishlist--active" data-id="3"><i class="fa-solid fa-heart"></i></button>
-<img alt="Running Shoes" class="product-card__image" loading="lazy" src="assets/images/products/product-3.jpg"/>
+<img alt="Running Shoes" class="product-card__image" loading="lazy" src="assets/images/product-3.jpg"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Footwear</span>
@@ -323,7 +340,7 @@
 <article class="product-card" data-brand="Generic" data-category="fashion" data-id="4" data-name="Minimalist Leather Backpack" data-old-price="3299" data-price="3299" data-rating="3.5" data-stock="8">
 <div class="product-card__media">
 <button aria-label="Add to wishlist" class="product-card__wishlist" data-id="4"><i class="fa-regular fa-heart"></i></button>
-<img alt="Leather Backpack" class="product-card__image" loading="lazy" src="assets/images/products/product-4.jpg"/>
+<img alt="Leather Backpack" class="product-card__image" loading="lazy" src="assets/images/product-4.jpg"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Fashion</span>
@@ -351,7 +368,7 @@
 <div class="product-card__media">
 <span class="badge badge--accent product-card__badge">Trending</span>
 <button aria-label="Add to wishlist" class="product-card__wishlist" data-id="5"><i class="fa-regular fa-heart"></i></button>
-<img alt="Bluetooth Speaker" class="product-card__image" loading="lazy" src="assets/images/products/product-5.jpg"/>
+<img alt="Bluetooth Speaker" class="product-card__image" loading="lazy" src="assets/images/product-5.jpg"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Electronics</span>
@@ -380,7 +397,7 @@
 <article class="product-card" data-brand="H&amp;M" data-category="fashion" data-id="6" data-name="Classic Fit Cotton T-Shirt" data-old-price="899" data-price="599" data-rating="4.1" data-stock="40">
 <div class="product-card__media">
 <button aria-label="Add to wishlist" class="product-card__wishlist" data-id="6"><i class="fa-regular fa-heart"></i></button>
-<img alt="Cotton T-Shirt" class="product-card__image" loading="lazy" src="assets/images/products/product-6.jpg"/>
+<img alt="Cotton T-Shirt" class="product-card__image" loading="lazy" src="assets/images/product-6.jpg"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Fashion</span>
@@ -410,7 +427,7 @@
 <div class="product-card__media">
 <span class="badge badge--success product-card__badge">New</span>
 <button aria-label="Add to wishlist" class="product-card__wishlist" data-id="7"><i class="fa-regular fa-heart"></i></button>
-<img alt="Ceramic Cookware Set" class="product-card__image" loading="lazy" src="assets/images/products/product-7.jpg"/>
+<img alt="Ceramic Cookware Set" class="product-card__image" loading="lazy" src="assets/images/product-7.jpg"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Home &amp; Living</span>
@@ -439,7 +456,7 @@
 <article class="product-card" data-brand="Generic" data-category="sports" data-id="8" data-name="Anti-Slip Yoga Mat 6mm" data-old-price="799" data-price="799" data-rating="3.2" data-stock="22">
 <div class="product-card__media">
 <button aria-label="Add to wishlist" class="product-card__wishlist" data-id="8"><i class="fa-regular fa-heart"></i></button>
-<img alt="Yoga Mat" class="product-card__image" loading="lazy" src="assets/images/products/product-8.jpg"/>
+<img alt="Yoga Mat" class="product-card__image" loading="lazy" src="assets/images/product-8.png"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Sports</span>
@@ -467,7 +484,7 @@
 <div class="product-card__media">
 <span class="badge badge--danger product-card__badge">-25%</span>
 <button aria-label="Add to wishlist" class="product-card__wishlist" data-id="9"><i class="fa-regular fa-heart"></i></button>
-<img alt="Face Serum" class="product-card__image" loading="lazy" src="assets/images/products/product-9.jpg"/>
+<img alt="Face Serum" class="product-card__image" loading="lazy" src="assets/images/product-9.jpg"/>
 </div>
 <div class="product-card__body">
 <span class="product-card__category">Beauty</span>
@@ -583,5 +600,7 @@
 <button aria-label="Back to top" class="back-to-top" id="backToTop">
 <i class="fa-solid fa-arrow-up"></i>
 </button>
+
+<script src = "products.js"></script>
 </body>
 </html>

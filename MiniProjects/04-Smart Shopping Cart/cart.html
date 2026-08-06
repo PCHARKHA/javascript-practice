@@ -44,11 +44,11 @@
 </button>
 <a aria-label="Wishlist" class="navbar-actions__btn navbar-actions__btn--wishlist" href="wishlist.html">
 <i class="fa-regular fa-heart"></i>
-<span class="navbar-actions__count" id="wishlistCount">3</span>
+<span class="navbar-actions__count" id="wishlistCount">0</span>
 </a>
 <a aria-label="Cart" class="navbar-actions__btn navbar-actions__btn--cart" href="cart.html">
 <i class="fa-solid fa-bag-shopping"></i>
-<span class="navbar-actions__count" id="cartCount">3</span>
+<span class="navbar-actions__count" id="cartCount">0</span>
 </a>
 <button aria-label="Toggle menu" class="navbar__toggle" id="navToggle">
 <i class="fa-solid fa-bars"></i>
@@ -68,7 +68,7 @@
 <div>
 <h1 class="page-heading__title">Your Cart</h1>
 </div>
-<span class="page-heading__count">3 items in your cart</span>
+<span class="page-heading__count" id="cartPageCount">0 items in your cart</span>
 </div>
 <div class="cart-layout">
 <!-- ============================ CART ITEMS ============================ -->
@@ -77,75 +77,8 @@
 <span class="cart-items-list__title">Items</span>
 <button class="cart-items-list__clear" id="clearCart">Clear Cart</button>
 </div>
-<article class="cart-item" data-brand="Noise" data-category="electronics" data-id="1" data-name="Noise Cancelling Wireless Headphones" data-old-price="3999" data-price="2499" data-rating="4.5" data-stock="18">
-<div class="cart-item__media">
-<img alt="Wireless Headphones" class="cart-item__image" loading="lazy" src="assets/images/products/product-1.jpg"/>
-</div>
-<div class="cart-item__details">
-<span class="cart-item__category">Electronics</span>
-<h3 class="cart-item__name">Noise Cancelling Wireless Headphones</h3>
-<span class="cart-item__variant">Colour: Midnight Black</span>
-<div class="cart-item__price-row">
-<span class="cart-item__price">₹2,499</span>
-<span class="cart-item__price-old">₹3,999</span>
-</div>
-</div>
-<div class="quantity-selector cart-item__quantity">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<span class="cart-item__total">₹2,499</span>
-<button aria-label="Remove item" class="cart-item__remove" data-id="1">
-<i class="fa-solid fa-trash-can"></i>
-</button>
-</article>
-<article class="cart-item" data-brand="Noise" data-category="electronics" data-id="2" data-name="Smart Fitness Watch Series 5" data-old-price="5499" data-price="4199" data-rating="4.0" data-stock="15">
-<div class="cart-item__media">
-<img alt="Smart Fitness Watch" class="cart-item__image" loading="lazy" src="assets/images/products/product-2.jpg"/>
-</div>
-<div class="cart-item__details">
-<span class="cart-item__category">Electronics</span>
-<h3 class="cart-item__name">Smart Fitness Watch Series 5</h3>
-<span class="cart-item__variant">Strap: Charcoal Silicone</span>
-<div class="cart-item__price-row">
-<span class="cart-item__price">₹4,199</span>
-<span class="cart-item__price-old">₹5,499</span>
-</div>
-</div>
-<div class="quantity-selector cart-item__quantity">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<span class="cart-item__total">₹4,199</span>
-<button aria-label="Remove item" class="cart-item__remove" data-id="2">
-<i class="fa-solid fa-trash-can"></i>
-</button>
-</article>
-<article class="cart-item" data-brand="Puma" data-category="footwear" data-id="3" data-name="Men's Air Cushion Running Shoes" data-old-price="2999" data-price="1799" data-rating="5.0" data-stock="22">
-<div class="cart-item__media">
-<img alt="Running Shoes" class="cart-item__image" loading="lazy" src="assets/images/products/product-3.jpg"/>
-</div>
-<div class="cart-item__details">
-<span class="cart-item__category">Footwear</span>
-<h3 class="cart-item__name">Men's Air Cushion Running Shoes</h3>
-<span class="cart-item__variant">Size: UK 9</span>
-<div class="cart-item__price-row">
-<span class="cart-item__price">₹1,799</span>
-<span class="cart-item__price-old">₹2,999</span>
-</div>
-</div>
-<div class="quantity-selector cart-item__quantity">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">2</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<span class="cart-item__total">₹3,598</span>
-<button aria-label="Remove item" class="cart-item__remove" data-id="3">
-<i class="fa-solid fa-trash-can"></i>
-</button>
-</article>
+<div class="cart-items-list__items" id="cartItemsList"></div>
+<div class="empty-state" hidden="" id="emptyCart"></div>
 <a class="cart-continue" href="products.html">
 <i class="fa-solid fa-arrow-left"></i> Continue Shopping
           </a>
@@ -158,37 +91,39 @@
 <input class="coupon-form__input" id="couponInput" placeholder="Enter coupon code" type="text"/>
 <button class="coupon-form__submit" id="applyCoupon" type="submit">Apply</button>
 </form>
-<div class="coupon-applied">
-<span><i class="fa-solid fa-circle-check"></i> WELCOME50 applied</span>
-<button aria-label="Remove coupon" class="coupon-applied__remove"><i class="fa-solid fa-xmark"></i></button>
+<div class="coupon-applied" id="couponApplied" style="display:none;">
+  <span id="couponAppliedText">
+    <i class="fa-solid fa-circle-check"></i>
+</span>
+<button aria-label="Remove coupon" class="coupon-applied__remove"  id="removeCoupon"><i class="fa-solid fa-xmark"></i></button>
 </div>
 </div>
 <div class="cart-summary__card">
 <h2 class="cart-summary__title">Order Summary</h2>
 <div class="order-summary">
 <div class="order-summary__row">
-<span>Subtotal (4 items)</span>
-<span>₹10,296</span>
+<span id="subtotalLabel">Subtotal (0 items)</span>
+<span id="subtotalValue">₹0</span>
 </div>
 <div class="order-summary__row">
 <span>Tax (5%)</span>
-<span>₹515</span>
+<span id="taxValue">₹0</span>
 </div>
-<div class="order-summary__row order-summary__row--discount">
-<span>Discount (WELCOME50)</span>
-<span>-₹1,200</span>
+<div class="order-summary__row order-summary__row--discount" hidden="" id="discountRow">
+<span id="discountLabel">Discount</span>
+<span id="discountValue">-₹0</span>
 </div>
 <div class="order-summary__row">
 <span>Shipping</span>
-<span>Free</span>
+<span id="shippingValue">Free</span>
 </div>
 <div class="order-summary__divider"></div>
 <div class="order-summary__row order-summary__row--total">
 <span>Grand Total</span>
-<span>₹9,611</span>
+<span id="grandTotalValue">₹0</span>
 </div>
 </div>
-<button class="btn btn--primary btn--block cart-summary__checkout-btn">
+<button class="btn btn--primary btn--block cart-summary__checkout-btn" id="checkoutBtn">
               Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
 </button>
 <p class="cart-summary__secure-note">

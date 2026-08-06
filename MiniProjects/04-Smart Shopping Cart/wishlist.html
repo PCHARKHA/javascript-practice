@@ -44,11 +44,11 @@
 </button>
 <a aria-label="Wishlist" class="navbar-actions__btn navbar-actions__btn--wishlist" href="wishlist.html">
 <i class="fa-solid fa-heart"></i>
-<span class="navbar-actions__count" id="wishlistCount">4</span>
+<span class="navbar-actions__count" id="wishlistCount">0</span>
 </a>
 <a aria-label="Cart" class="navbar-actions__btn navbar-actions__btn--cart" href="cart.html">
 <i class="fa-solid fa-bag-shopping"></i>
-<span class="navbar-actions__count" id="cartCount">3</span>
+<span class="navbar-actions__count" id="cartCount">0</span>
 </a>
 <button aria-label="Toggle menu" class="navbar__toggle" id="navToggle">
 <i class="fa-solid fa-bars"></i>
@@ -68,7 +68,7 @@
 <div>
 <h1 class="page-heading__title">Your Wishlist</h1>
 </div>
-<span class="page-heading__count" id="wishlistCountText">4 items saved</span>
+<span class="page-heading__count" id="wishlistCountText">0 items saved</span>
 </div>
 <div class="wishlist-actions">
 <button class="btn btn--outline btn--sm" id="addAllToCartBtn">
@@ -76,82 +76,7 @@
         </button>
 </div>
 <!-- ============================ WISHLIST GRID ============================ -->
-<div class="wishlist-grid" id="wishlistGrid">
-<article class="wishlist-card" data-brand="Noise" data-category="electronics" data-id="1" data-name="Noise Cancelling Wireless Headphones" data-old-price="3999" data-price="2499" data-rating="4.5" data-stock="18">
-<div class="wishlist-card__media">
-<span class="badge badge--accent wishlist-card__badge">Best Seller</span>
-<button aria-label="Remove from wishlist" class="wishlist-card__remove" data-id="1"><i class="fa-solid fa-xmark"></i></button>
-<img alt="Wireless Headphones" class="wishlist-card__image" loading="lazy" src="assets/images/products/product-1.jpg"/>
-</div>
-<div class="wishlist-card__body">
-<span class="wishlist-card__category">Electronics</span>
-<h3 class="wishlist-card__title">Noise Cancelling Wireless Headphones</h3>
-<div class="wishlist-card__price-row">
-<span class="wishlist-card__price">₹2,499</span>
-<span class="wishlist-card__price-old">₹3,999</span>
-</div>
-<span class="wishlist-card__stock"><i class="fa-solid fa-circle-check"></i> In Stock</span>
-</div>
-<div class="wishlist-card__footer">
-<button class="wishlist-card__add-btn" data-id="1"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-</div>
-</article>
-<article class="wishlist-card" data-brand="Generic" data-category="fashion" data-id="2" data-name="Minimalist Leather Backpack" data-old-price="" data-price="3299" data-rating="3.5" data-stock="12">
-<div class="wishlist-card__media">
-<button aria-label="Remove from wishlist" class="wishlist-card__remove" data-id="2"><i class="fa-solid fa-xmark"></i></button>
-<img alt="Leather Backpack" class="wishlist-card__image" loading="lazy" src="assets/images/products/product-4.jpg"/>
-</div>
-<div class="wishlist-card__body" data-category="electronics" data-id="3" data-name="Noise Cancelling Wireless Headphones" data-price="2499" data-stock="18">
-<span class="wishlist-card__category">Fashion</span>
-<h3 class="wishlist-card__title">Minimalist Leather Backpack</h3>
-<div class="wishlist-card__price-row">
-<span class="wishlist-card__price">₹3,299</span>
-</div>
-<span class="wishlist-card__stock"><i class="fa-solid fa-circle-check"></i> In Stock</span>
-</div>
-<div class="wishlist-card__footer">
-<button class="wishlist-card__add-btn" data-id="2"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-</div>
-</article>
-<article class="wishlist-card" data-brand="GlowCo" data-category="beauty" data-id="3" data-name="Vitamin C Brightening Face Serum" data-old-price="1199" data-price="899" data-rating="4.8" data-stock="25">
-<div class="wishlist-card__media">
-<span class="badge badge--danger wishlist-card__badge">-25%</span>
-<button aria-label="Remove from wishlist" class="wishlist-card__remove" data-id="3"><i class="fa-solid fa-xmark"></i></button>
-<img alt="Face Serum" class="wishlist-card__image" loading="lazy" src="assets/images/products/product-9.jpg"/>
-</div>
-<div class="wishlist-card__body">
-<span class="wishlist-card__category">Beauty</span>
-<h3 class="wishlist-card__title">Vitamin C Brightening Face Serum</h3>
-<div class="wishlist-card__price-row">
-<span class="wishlist-card__price">₹899</span>
-<span class="wishlist-card__price-old">₹1,199</span>
-</div>
-<span class="wishlist-card__stock"><i class="fa-solid fa-circle-check"></i> In Stock</span>
-</div>
-<div class="wishlist-card__footer">
-<button class="wishlist-card__add-btn" data-id="3"><i class="fa-solid fa-cart-plus"></i> Add to Cart</button>
-</div>
-</article>
-<article class="wishlist-card" data-brand="KitchenPro" data-category="home-living" data-id="4" data-name="Non-Stick Ceramic Cookware Set" data-old-price="5299" data-price="3899" data-rating="4.6" data-stock="0">
-<div class="wishlist-card__media">
-<span class="badge badge--success wishlist-card__badge">New</span>
-<button aria-label="Remove from wishlist" class="wishlist-card__remove" data-id="4"><i class="fa-solid fa-xmark"></i></button>
-<img alt="Ceramic Cookware Set" class="wishlist-card__image" loading="lazy" src="assets/images/products/product-7.jpg"/>
-</div>
-<div class="wishlist-card__body">
-<span class="wishlist-card__category">Home &amp; Living</span>
-<h3 class="wishlist-card__title">Non-Stick Ceramic Cookware Set</h3>
-<div class="wishlist-card__price-row">
-<span class="wishlist-card__price">₹3,899</span>
-<span class="wishlist-card__price-old">₹5,299</span>
-</div>
-<span class="wishlist-card__stock wishlist-card__stock--out"><i class="fa-solid fa-circle-xmark"></i> Out of Stock</span>
-</div>
-<div class="wishlist-card__footer">
-<button class="wishlist-card__add-btn" data-id="4" disabled=""><i class="fa-solid fa-cart-plus"></i> Out of Stock</button>
-</div>
-</article>
-</div>
+<div class="wishlist-grid" id="wishlistGrid"></div>
 <!-- ============================ EMPTY STATE (hidden by default, shown when wishlist has 0 items) ============================ -->
 <div class="empty-state" hidden="" id="emptyWishlist"></div>
 </div>
