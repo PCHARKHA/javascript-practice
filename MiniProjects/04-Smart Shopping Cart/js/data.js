@@ -1,4 +1,4 @@
-const products = [
+export const products = [
     {
         id: 1,
         name: "Noise Cancelling Wireless Headphones",
@@ -9,7 +9,7 @@ const products = [
         rating: 4.5,
         stock: 18,
         badge: "Best Seller",
-        image: "assets/images/products/product-1.jpg"
+        image: "assets/images/product-1.png"
     },
 
     {
@@ -22,7 +22,7 @@ const products = [
         rating: 4.0,
         stock: 12,
         badge: "New",
-        image: "assets/images/products/product-2.jpg"
+        image: "assets/images/product-2.png"
     },
 
     {
@@ -35,7 +35,7 @@ const products = [
         rating: 5.0,
         stock: 25,
         badge: "Sale",
-        image: "assets/images/products/product-3.jpg"
+        image: "assets/images/product-3.jpg"
     },
 
     {
@@ -48,7 +48,7 @@ const products = [
         rating: 3.5,
         stock: 10,
         badge: null,
-        image: "assets/images/products/product-4.jpg"
+        image: "assets/images/product-4.jpg"
     },
 
     {
@@ -61,7 +61,7 @@ const products = [
         rating: 4.2,
         stock: 22,
         badge: "Trending",
-        image: "assets/images/products/product-5.jpg"
+        image: "assets/images/product-5.png"
     },
 
     {
@@ -74,7 +74,7 @@ const products = [
         rating: 4.1,
         stock: 35,
         badge: null,
-        image: "assets/images/products/product-6.jpg"
+        image: "assets/images/product-6.jpg"
     },
 
     {
@@ -87,7 +87,7 @@ const products = [
         rating: 4.6,
         stock: 0,
         badge: "New",
-        image: "assets/images/products/product-7.jpg"
+        image: "assets/images/product-7.jpg"
     },
 
     {
@@ -100,7 +100,7 @@ const products = [
         rating: 3.2,
         stock: 15,
         badge: null,
-        image: "assets/images/products/product-8.jpg"
+        image: "assets/images/product-8.png"
     },
 
     {
@@ -113,13 +113,13 @@ const products = [
         rating: 4.8,
         stock: 30,
         badge: "Sale",
-        image: "assets/images/products/product-9.jpg"
+        image: "assets/images/product-9.jpg"
     }
 ];
 
 
 //CATEGORIES
-const categories = [
+export const categories = [
     "electronics",
     "fashion",
     "footwear",
@@ -129,7 +129,7 @@ const categories = [
 ];
 
 //COUPONS
-const coupons = [
+export const coupons = [
     {
         code: "WELCOME10",
         type: "percentage",

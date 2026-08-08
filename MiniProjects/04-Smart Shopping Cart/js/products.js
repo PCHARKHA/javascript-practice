@@ -1,13 +1,23 @@
+import { products } from "./data.js";
+import { getCart, saveCart } from "./storage.js";
+
+import {
+    formatPrice,
+    findProductById,
+    getDiscountPercentage,
+    showToast
+} from "./utils.js";
+
 const productsGrid = document.getElementById("productsGrid");
-function renderProducts(products){
-    productsGrid.innerHTML ="";
-    products.forEach(product => {
+
+function renderProducts(productList) {
+    productsGrid.innerHTML = "";
+
+    productList.forEach(product => {
         const card = createProductCard(product);
-        console.log(card);
-        productContainer.appendChild(card);
+        productsGrid.appendChild(card);
     });
 }
-
 //function creates and returns one product card
 function createProductCard(product){
     const card = document.createElement("article");
@@ -32,16 +42,6 @@ function createProductCard(product){
                        </span>`
                     : ""
             }
-
-            <button
-                class="product-card__wishlist
-                ${isInWishlist(product.id) ? "product-card__wishlist--active" : ""}"
-                data-id="${product.id}"
-                aria-label="Wishlist">
-
-                <i class="fa-${isInWishlist(product.id) ? "solid" : "regular"} fa-heart"></i>
-
-            </button>
 
             <img src="${product.image}" alt="${product.name}"
                 class="product-card__image"
@@ -88,9 +88,10 @@ function createProductCard(product){
                     class="quantity-selector__btn"
                     data-action="decrease"
                     data-id="${product.id}">
+                    -
                 </button>
 
-                <span class="quantity-selector__value" data-quantity></span>
+                <span class="quantity-selector__value" data-quantity>1</span>
 
                 <button class="quantity-selector__btn"
                     data-action="increase"
@@ -132,7 +133,7 @@ function generateStars(rating) {
 }
 
 function increaseQuantity(button) {
-    const quantityElement =button.parentElement.querySelector("[data-quantity]");
+    const quantityElement = button.parentElement.querySelector("[data-quantity]");
 
     let quantity = Number(quantityElement.textContent);
     quantity++;
@@ -140,7 +141,6 @@ function increaseQuantity(button) {
 }
 
 function decreaseQuantity(button) {
-
     const quantityElement = button.parentElement.querySelector("[data-quantity]");
     let quantity = Number(quantityElement.textContent);
 
@@ -150,38 +150,6 @@ function decreaseQuantity(button) {
     quantityElement.textContent = quantity;
 }
 
-document.addEventListener("click", (event) => {
-    if (event.target.dataset.action === "increase") {
-        increaseQuantity(event.target);
-    }
-
-    if (event.target.dataset.action === "decrease") {
-        decreaseQuantity(event.target);
-    }
-
-});
-
-function isInWishlist(productId) {
-    const wishlist = getWishlist();
-    return wishlist.includes(productId);
-}
-
-function toggleWishlist(productId) {
-    const wishlist = getWishlist();
-
-    if (isInWishlist(productId)) {
-        const updatedWishlist = wishlist.filter(id => id !== productId);
-        saveWishlist(updatedWishlist);
-        showToast("Removed from Wishlist");
-
-    } else {
-        wishlist.push(productId);
-        saveWishlist(wishlist);
-        showToast("Added to Wishlist");
-    }
-    renderProducts(products);
-}
-
 function isProductInCart(productId) {
     const cart = getCart();
     return cart.some(item => item.id === productId);
@@ -189,13 +157,13 @@ function isProductInCart(productId) {
 
 function addToCart(productId) {
     const cart = getCart();
-    const product = findProductById(productId);
+    const product = findProductById(products, productId);
 
     const card = document.querySelector(`[data-id="${productId}"]`);
 
     const quantity = Number(card.querySelector("[data-quantity]").textContent);
 
-    const existingProduct = cart.find( item => item.id === productId);
+    const existingProduct = cart.find(item => item.id === productId);
 
     if (existingProduct) {
         existingProduct.quantity += quantity;
@@ -205,13 +173,29 @@ function addToCart(productId) {
             id: product.id,
             quantity: quantity
         });
-        
+
         showToast("Added to Cart");
     }
     saveCart(cart);
-    renderProducts(products);
-
+    applyFilters();
 }
+
+// Event delegation: quantity buttons and Add to Cart button
+document.addEventListener("click", (event) => {
+    if (event.target.dataset.action === "increase") {
+        increaseQuantity(event.target);
+    }
+
+    if (event.target.dataset.action === "decrease") {
+        decreaseQuantity(event.target);
+    }
+
+    const addButton = event.target.closest(".product-card__add-btn");
+    if (addButton) {
+        const productId = Number(addButton.dataset.id);
+        addToCart(productId);
+    }
+});
 
 const activeFilters = {
     search: "",
@@ -279,21 +263,24 @@ function sortProducts(productList) {
             break;
 
         case "name-a-z":
-            sortedProducts.sort((a, b) =>
-                a.name.localeCompare(b.name)
-            );
+            sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
             break;
 
-        case "name-z-a":
-            sortedProducts.sort((a, b) =>
-                b.name.localeCompare(a.name)
-            );
+        case "name-z":
+            sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
             break;
 
         default:
             break;
     }
     return sortedProducts;
+}
+
+function updateProductsCount(count) {
+    const productsCountElement = document.getElementById("productsCount");
+    if (productsCountElement) {
+        productsCountElement.textContent = `Showing ${count} products`;
+    }
 }
 
 function applyFilters() {
@@ -304,21 +291,35 @@ function applyFilters() {
     filteredProducts = filterByPrice(filteredProducts);
     filteredProducts = sortProducts(filteredProducts);
     renderProducts(filteredProducts);
+    updateProductsCount(filteredProducts.length);
     renderActiveFilters();
 }
 
 function renderActiveFilters() {
-    console.log("Current Filters:");
-    console.log("Search :", activeFilters.search);
-    console.log("Category :", activeFilters.category);
-    console.log("Brand :", activeFilters.brand);
-    console.log(
-        "Price :",
-        activeFilters.minPrice,
-        "-",
-        activeFilters.maxPrice
-    );
-    console.log("Sort :", activeFilters.sort);
+    const activeFiltersContainer = document.getElementById("activeFilters");
+    if (!activeFiltersContainer) {
+        return;
+    }
+
+    const filterTags = [];
+
+    if (activeFilters.search) {
+        filterTags.push(`Search: "${activeFilters.search}"`);
+    }
+
+    if (activeFilters.category !== "all") {
+        filterTags.push(`Category: ${activeFilters.category}`);
+    }
+
+    if (activeFilters.brand !== "all") {
+        filterTags.push(`Brand: ${activeFilters.brand}`);
+    }
+
+    if (activeFilters.maxPrice !== Infinity) {
+        filterTags.push(`Max Price: ${formatPrice(activeFilters.maxPrice)}`);
+    }
+
+    activeFiltersContainer.textContent = filterTags.join(" | ");
 }
 
 function clearFilters() {
@@ -328,6 +329,42 @@ function clearFilters() {
     activeFilters.minPrice = 0;
     activeFilters.maxPrice = Infinity;
     activeFilters.sort = "default";
+
+    // Reset the HTML controls to match
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+        searchInput.value = "";
+    }
+
+    const categoryRadios = document.querySelectorAll('input[name="category"]');
+    categoryRadios.forEach(radio => {
+        radio.checked = radio.value === "all";
+    });
+
+    const brandRadios = document.querySelectorAll('input[name="brand"]');
+    brandRadios.forEach(radio => {
+        radio.checked = radio.value === "all";
+    });
+
+    const priceSlider = document.getElementById("priceRange");
+    const minPriceInput = document.getElementById("minPrice");
+    const maxPriceInput = document.getElementById("maxPrice");
+
+    if (priceSlider) {
+        priceSlider.value = priceSlider.max;
+    }
+    if (minPriceInput) {
+        minPriceInput.value = "₹0";
+    }
+    if (maxPriceInput && priceSlider) {
+        maxPriceInput.value = `₹${Number(priceSlider.max).toLocaleString("en-IN")}`;
+    }
+
+    const sortSelect = document.getElementById("sortProducts");
+    if (sortSelect) {
+        sortSelect.value = "default";
+    }
+
     applyFilters();
 }
 
@@ -337,7 +374,6 @@ function initializeProductsPage() {
 
     // Search
     const searchInput = document.getElementById("searchInput");
-
     if (searchInput) {
         searchInput.addEventListener("input", (event) => {
             activeFilters.search = event.target.value;
@@ -345,28 +381,21 @@ function initializeProductsPage() {
         });
     }
 
-    // Category Checkboxes
-    const categoryCheckboxes = document.querySelectorAll('.filter-group input[type="checkbox"]');
-
-    categoryCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", function () {
-            if (this.closest(".filter-group").innerText.includes("Category")) {
-                activeFilters.category = this.checked ? this.value: "all";
-                applyFilters();
-            }
+    // Category Radio Buttons
+    const categoryRadios = document.querySelectorAll('input[name="category"]');
+    categoryRadios.forEach(radio => {
+        radio.addEventListener("change", function () {
+            activeFilters.category = this.value;
+            applyFilters();
         });
     });
 
-    // Brand Checkboxes
-    const brandCheckboxes  = document.querySelectorAll(
-        '.filter-group input[type="checkbox"]');
-
-    brandCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", function () {
-            if (this.closest(".filter-group").innerText.includes("Brand")) {
-                activeFilters.brand = this.checked ? this.value: "all";
-                applyFilters();
-            }
+    // Brand Radio Buttons
+    const brandRadios = document.querySelectorAll('input[name="brand"]');
+    brandRadios.forEach(radio => {
+        radio.addEventListener("change", function () {
+            activeFilters.brand = this.value;
+            applyFilters();
         });
     });
 
@@ -383,19 +412,10 @@ function initializeProductsPage() {
         });
     }
 
-    // Price Sorting
-    const priceSort = document.getElementById("priceSort");
-    if (priceSort) {
-        priceSort.addEventListener("change", function () {
-            activeFilters.sort = this.value;
-            applyFilters();
-        });
-    }
-
-    // Rating Sorting
-    const ratingSort = document.getElementById("ratingSort");
-    if (ratingSort) {
-        ratingSort.addEventListener("change", function () {
+    // Sorting
+    const sortSelect = document.getElementById("sortProducts");
+    if (sortSelect) {
+        sortSelect.addEventListener("change", function () {
             activeFilters.sort = this.value;
             applyFilters();
         });

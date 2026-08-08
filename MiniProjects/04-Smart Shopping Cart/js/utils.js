@@ -1,15 +1,9 @@
-// FORMAT PRICE
-function formatPrice(price) {
+// PRICE UTILITIES
+export function formatPrice(price) {
     return `₹${price.toLocaleString("en-IN")}`;
 }
 
-// FIND PRODUCT BY ID
-function findProductById(productId) {
-    return products.find(product => product.id === productId);
-}
-
-// CALCULATE DISCOUNT PERCENTAGE
-function getDiscountPercentage(product) {
+export function getDiscountPercentage(product) {
     if (!product.oldPrice) {
         return 0;
     }
@@ -19,47 +13,65 @@ function getDiscountPercentage(product) {
     );
 }
 
-// CALCULATE TAX
-function calculateTax(subtotal) {
-    return Number((subtotal * TAX_RATE).toFixed(2));
+// PRODUCT UTILITIES
+export function findProductById(products, productId) {
+    return products.find(product => product.id === productId);
 }
 
+// CART CALCULATIONS
+export function calculateSubtotal(cart, products) {
+    return cart.reduce((subtotal, item) => {
 
-// CALCULATE SUBTOTAL
-function calculateSubtotal(cart) {
-    let subtotal = 0;
+        const product = findProductById(products, item.id);
 
-    cart.forEach(item => {
-        const product = findProductById(item.id);
-
-        if (product) {
-            subtotal += product.price * item.quantity;
+        if (!product) {
+            return subtotal;
         }
-    });
 
-    return subtotal;
+        return subtotal + (product.price * item.quantity);
+
+    }, 0);
 }
 
-function getShippingCharge(subtotal) {
-    return subtotal >= FREE_SHIPPING_LIMIT ? 0 : SHIPPING_CHARGE;
+export function calculateTax(subtotal, taxRate) {
+    return Number((subtotal * taxRate).toFixed(2));
 }
 
-function calculateGrandTotal(subtotal, tax, shipping, discount = 0) {
-    return Number((subtotal + tax + shipping - discount).toFixed(2));
-}
-// GET CART ITEM COUNT
-function getCartItemCount(cart) {
-    let count = 0;
-
-    cart.forEach(item => {
-        count += item.quantity;
-    });
-
-    return count;
+export function getShippingCharge(
+    subtotal,
+    freeShippingLimit,
+    shippingCharge
+) {
+    return subtotal >= freeShippingLimit
+        ? 0
+        : shippingCharge;
 }
 
-//CREATE ELEMENT
-function createElement(tag, className = "", text = "") {
+export function calculateGrandTotal(
+    subtotal,
+    tax,
+    shipping,
+    discount = 0
+) {
+    return Number(
+        (subtotal + tax + shipping - discount).toFixed(2)
+    );
+}
+
+export function getCartItemCount(cart) {
+    return cart.reduce(
+        (count, item) => count + item.quantity,
+        0
+    );
+}
+
+
+// DOM UTILITIES
+export function createElement(
+    tag,
+    className = "",
+    text = ""
+) {
     const element = document.createElement(tag);
 
     if (className) {
@@ -73,4 +85,26 @@ function createElement(tag, className = "", text = "") {
     return element;
 }
 
-//debounce and showToast
+
+// FUNCTION UTILITIES
+export function debounce(callback, delay = 300) {
+    let timer;
+
+    return function (...args) {
+
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            callback.apply(this, args);
+        }, delay);
+
+    };
+}
+
+// UI UTILITIES
+export function showToast(message) {
+    alert(message);
+
+    // We'll replace this later with
+    // a proper animated toast component.
+}

@@ -24,10 +24,7 @@
 </a>
   <nav class="navbar-links" id="navbarLinks">
     <a class="navbar-links__item navbar-links__item--active" href="index.html">Home</a>
-    <a class="navbar-links__item" href="products.html">Shop</a>
-    <a class="navbar-links__item" href="products.html">Categories</a>
-    <a class="navbar-links__item" href="#">Deals</a>
-    <a class="navbar-links__item" href="#">About</a>
+    <a class="navbar-links__item" href="products.html">Products</a>
   </nav>
 <div class="search-container" id="searchContainer">
 <form class="search-container__form" role="search">
@@ -42,10 +39,6 @@
 <button aria-label="Toggle search" class="navbar__search-toggle" id="searchToggle">
 <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-<a aria-label="Wishlist" class="navbar-actions__btn navbar-actions__btn--wishlist" href="wishlist.html">
-<i class="fa-regular fa-heart"></i>
-<span class="navbar-actions__count" id="wishlistCount">3</span>
-</a>
 <a aria-label="Cart" class="navbar-actions__btn navbar-actions__btn--cart" href="cart.html">
 <i class="fa-solid fa-bag-shopping"></i>
 <span class="navbar-actions__count" id="cartCount">2</span>
@@ -76,7 +69,7 @@
 <a class="btn btn--primary" href="products.html">
 <i class="fa-solid fa-bag-shopping"></i> Start Shopping
             </a>
-<a class="btn btn--ghost" href="#featuredCategories">Browse Categories</a>
+<a class="btn btn--ghost" href="products.html">Browse Categories</a>
 </div>
 <div class="hero-banner__stats">
 <div>
@@ -92,22 +85,6 @@
 <div>
 <div class="hero-banner__stat-value">4.8/5</div>
 <div class="hero-banner__stat-label">Average Rating</div>
-</div>
-</div>
-</div>
-<div class="hero-banner__visual">
-<div class="hero-spotlight">
-<span class="hero-spotlight__discount">
-<strong>30%</strong>
-<span>Off Today</span>
-</span>
-<img alt="Featured product" class="hero-spotlight__image" src="assets/images/banners/hero-spotlight.jpg"/>
-<div class="hero-spotlight__float-card">
-<span class="hero-spotlight__float-icon"><i class="fa-solid fa-truck-fast"></i></span>
-<span class="hero-spotlight__float-text">
-<strong>Free Delivery</strong>
-<span>On orders above ₹499</span>
-</span>
 </div>
 </div>
 </div>
@@ -134,50 +111,6 @@
 </div>
 </div>
 </section>
-<!-- ============================ FEATURED CATEGORIES ============================ -->
-<section class="page-section featured-categories" id="featuredCategories">
-<div class="container">
-<div class="section-header">
-<div>
-<span class="section-eyebrow">Browse</span>
-<h2 class="section-heading">Featured Categories</h2>
-<p class="section-subheading">Shop by category and find exactly what you need</p>
-</div>
-</div>
-<div class="featured-categories__grid">
-<a class="category-tile" data-category="electronics" href="products.html">
-<span class="category-tile__icon"><i class="fa-solid fa-mobile-screen"></i></span>
-<span class="category-tile__name">Electronics</span>
-<span class="category-tile__count">1,240 items</span>
-</a>
-<a class="category-tile" data-category="fashion" href="products.html">
-<span class="category-tile__icon"><i class="fa-solid fa-shirt"></i></span>
-<span class="category-tile__name">Fashion</span>
-<span class="category-tile__count">3,802 items</span>
-</a>
-<a class="category-tile" data-category="home-living" href="products.html">
-<span class="category-tile__icon"><i class="fa-solid fa-couch"></i></span>
-<span class="category-tile__name">Home &amp; Living</span>
-<span class="category-tile__count">960 items</span>
-</a>
-<a class="category-tile" data-category="footwear" href="products.html">
-<span class="category-tile__icon"><i class="fa-solid fa-shoe-prints"></i></span>
-<span class="category-tile__name">Footwear</span>
-<span class="category-tile__count">640 items</span>
-</a>
-<a class="category-tile" data-category="sports" href="products.html">
-<span class="category-tile__icon"><i class="fa-solid fa-baseball"></i></span>
-<span class="category-tile__name">Sports</span>
-<span class="category-tile__count">410 items</span>
-</a>
-<a class="category-tile" data-category="beauty" href="products.html">
-<span class="category-tile__icon"><i class="fa-solid fa-spray-can-sparkles"></i></span>
-<span class="category-tile__name">Beauty</span>
-<span class="category-tile__count">720 items</span>
-</a>
-</div>
-</div>
-</section>
 <!-- ============================ FEATURED PRODUCTS ============================ -->
 <section class="page-section featured-products">
 <div class="container">
@@ -187,18 +120,11 @@
 <h2 class="section-heading">Featured Products</h2>
 <p class="section-subheading">Top rated picks our customers love</p>
 </div>
-<div class="featured-products__tabs">
-<button class="featured-products__tab featured-products__tab--active" data-filter="all">All</button>
-<button class="featured-products__tab" data-filter="new">New</button>
-<button class="featured-products__tab" data-filter="best-seller">Best Sellers</button>
-<button class="featured-products__tab" data-filter="sale">On Sale</button>
-</div>
 </div>
 <div class="featured-products__grid" id="featuredProductsGrid">
 <article class="product-card" data-brand="Noise" data-category="electronics" data-id="1" data-name="Noise Cancelling Wireless Headphones" data-old-price="3999" data-price="2499" data-rating="4.5" data-stock="18">
 <div class="product-card__media">
 <span class="badge badge--accent product-card__badge">Best Seller</span>
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="1"><i class="fa-regular fa-heart"></i></button>
 <img alt="Wireless Headphones" class="product-card__image" loading="lazy" src="assets/images/product-1.png"/>
 </div>
 <div class="product-card__body">
@@ -228,7 +154,6 @@
 <article class="product-card" data-brand="Noise" data-category="electronics" data-id="2" data-name="Smart Fitness Watch Series 5" data-old-price="5499" data-price="4199" data-rating="4.0" data-stock="15">
 <div class="product-card__media">
 <span class="badge badge--success product-card__badge">New</span>
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="2"><i class="fa-regular fa-heart"></i></button>
 <img alt="Smart Watch" class="product-card__image" loading="lazy" src="assets/images/product-2.png"/>
 </div>
 <div class="product-card__body">
@@ -258,7 +183,6 @@
 <article class="product-card" data-brand="Puma" data-category="footwear" data-id="3" data-name="Men's Air Cushion Running Shoes" data-old-price="2999" data-price="1799" data-rating="5.0" data-stock="22">
 <div class="product-card__media">
 <span class="badge badge--danger product-card__badge">-40%</span>
-<button aria-label="Remove from wishlist" class="product-card__wishlist product-card__wishlist--active" data-id="3"><i class="fa-solid fa-heart"></i></button>
 <img alt="Running Shoes" class="product-card__image" loading="lazy" src="assets/images/product-3.jpg"/>
 </div>
 <div class="product-card__body">
@@ -287,7 +211,6 @@
 </article>
 <article class="product-card" data-brand="Urban" data-category="fashion" data-id="4" data-name="Minimalist Leather Backpack" data-old-price="" data-price="3299" data-rating="3.5" data-stock="12">
 <div class="product-card__media">
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="4"><i class="fa-regular fa-heart"></i></button>
 <img alt="Leather Backpack" class="product-card__image" loading="lazy" src="assets/images/product-4.jpg"/>
 </div>
 <div class="product-card__body">
@@ -328,34 +251,7 @@
 <p class="promo-banner__text">Use code <strong>WELCOME50</strong> at checkout. Offer valid on your first purchase only.</p>
 <a class="btn btn--accent" href="products.html">Shop the Sale</a>
 </div>
-<div class="promo-banner__timer">
-<div class="promo-banner__timer-box">
-<strong>02</strong>
-<span>Days</span>
 </div>
-<div class="promo-banner__timer-box">
-<strong>14</strong>
-<span>Hours</span>
-</div>
-<div class="promo-banner__timer-box">
-<strong>36</strong>
-<span>Mins</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- ============================ NEWSLETTER ============================ -->
-<section class="page-section newsletter">
-<div class="container newsletter__inner">
-<div>
-<h3 class="newsletter__title">Stay in the loop</h3>
-<p class="newsletter__text">Get early access to new arrivals and exclusive discounts.</p>
-</div>
-<form class="newsletter__form" id="newsletterForm">
-<input class="newsletter__input" id="newsletterEmail" placeholder="Enter your email address" type="email"/>
-<button class="btn btn--primary" type="submit">Subscribe</button>
-</form>
 </div>
 </section>
 </main>
@@ -384,7 +280,6 @@
   <a class="site-footer__link" href="products.html">All Products</a>
   <a class="site-footer__link" href="products.html">New Arrivals</a>
   <a class="site-footer__link" href="products.html">Best Sellers</a>
-  <a class="site-footer__link" href="products.html">Deals</a>
 </div>
 </div>
 <div class="site-footer__col">
@@ -400,7 +295,6 @@
 <h4 class="site-footer__heading">Company</h4>
 <div class="site-footer__links">
   <a class="site-footer__link" href="#">About Us</a>
-  <a class="site-footer__link" href="#">Careers</a>
   <a class="site-footer__link" href="#">Privacy Policy</a>
   <a class="site-footer__link" href="#">Terms of Service</a>
 </div>
@@ -434,5 +328,7 @@
 <button aria-label="Back to top" class="back-to-top" id="backToTop">
 <i class="fa-solid fa-arrow-up"></i>
 </button>
+
+<script type="module" src="./js/app.js"></script>
 </body>
 </html>

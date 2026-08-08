@@ -159,7 +159,7 @@
     background-color: var(--color-primary-dark);
   }
   
-  /* Icon actions (wishlist / cart / account) ------------------------------ */
+  /* Icon actions (cart / account) ----------------------------------------- */
   
   .navbar-actions {
     display: flex;

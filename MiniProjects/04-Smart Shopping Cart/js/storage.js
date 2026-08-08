@@ -4,36 +4,36 @@ const STORAGE_KEYS = {
 };
 
 // Cart
-function getCart() {
+export function getCart() {
     const cart = localStorage.getItem(STORAGE_KEYS.cart);
 
     return cart ? JSON.parse(cart) : [];
 }
 
-function saveCart(cart) {
+export function saveCart(cart) {
     localStorage.setItem(
         STORAGE_KEYS.cart,
         JSON.stringify(cart)
     );
 }
 
-function clearCart() {
+export function clearCart() {
     localStorage.removeItem(STORAGE_KEYS.cart);
 }
 
-function getWishlist() {
-    const wishlist = localStorage.getItem(STORAGE_KEYS.wishlist);
+// function getWishlist() {
+//     const wishlist = localStorage.getItem(STORAGE_KEYS.wishlist);
 
-    return wishlist ? JSON.parse(wishlist) : [];
-}
+//     return wishlist ? JSON.parse(wishlist) : [];
+// }
 
-function saveWishlist(wishlist) {
-    localStorage.setItem(
-        STORAGE_KEYS.wishlist,
-        JSON.stringify(wishlist)
-    );
-}
+// function saveWishlist(wishlist) {
+//     localStorage.setItem(
+//         STORAGE_KEYS.wishlist,
+//         JSON.stringify(wishlist)
+//     );
+// }
 
-function clearWishlist() {
-    localStorage.removeItem(STORAGE_KEYS.wishlist);
-}
+// function clearWishlist() {
+//     localStorage.removeItem(STORAGE_KEYS.wishlist);
+// }

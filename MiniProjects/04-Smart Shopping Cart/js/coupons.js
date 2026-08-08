@@ -1,15 +1,19 @@
+import { coupons } from "./data.js";
+import { showToast } from "./utils.js";
+
+// APPLIED COUPON (kept in memory, not localStorage)
 let appliedCoupon = null;
+export { appliedCoupon };
 
 // FIND COUPON
-
-function findCoupon(code) {
+export function findCoupon(code) {
     return coupons.find(coupon =>
         coupon.code.toUpperCase() === code.toUpperCase()
     );
 }
 
 // CALCULATE DISCOUNT
-function calculateCouponDiscount(subtotal, coupon) {
+export function calculateCouponDiscount(subtotal, coupon) {
     if (!coupon) {
         return 0;
     }
@@ -22,13 +26,15 @@ function calculateCouponDiscount(subtotal, coupon) {
             return coupon.value;
 
         case "shipping":
-            return SHIPPING_CHARGE;
+            // Shipping coupons don't produce a product-price discount here.
+            // cart.js is responsible for handling the special meaning of
+            // the "shipping" coupon using getShippingCharge() from utils.js.
+            return 0;
 
         default:
             return 0;
     }
 }
-
 
 // APPLY COUPON
 function applyCoupon(event) {
@@ -53,9 +59,7 @@ function applyCoupon(event) {
     updateCouponUI();
 
     showToast(`${coupon.code} Applied Successfully`);
-
 }
-
 
 // REMOVE COUPON
 function removeCoupon() {
@@ -76,7 +80,6 @@ function updateCouponUI() {
             <i class="fa-solid fa-circle-check"></i>
             ${appliedCoupon.code} Applied
         `;
-
     }
     else {
         couponApplied.style.display = "none";
@@ -89,12 +92,12 @@ function initializeCoupons() {
     const removeCouponButton = document.getElementById("removeCoupon");
 
     if (couponForm) {
-        couponForm.addEventListener("submit",applyCoupon);
+        couponForm.addEventListener("submit", applyCoupon);
     }
 
     if (removeCouponButton) {
-        removeCouponButton.addEventListener("click",removeCoupon);
+        removeCouponButton.addEventListener("click", removeCoupon);
     }
 }
 
-document.addEventListener("DOMContentLoaded",initializeCoupons);
+document.addEventListener("DOMContentLoaded", initializeCoupons);

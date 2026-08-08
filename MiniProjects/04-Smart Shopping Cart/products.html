@@ -24,10 +24,7 @@
 </a>
 <nav class="navbar-links" id="navbarLinks">
 <a class="navbar-links__item" href="index.html">Home</a>
-<a class="navbar-links__item navbar-links__item--active" href="products.html">Shop</a>
-<a class="navbar-links__item" href="products.html">Categories</a>
-<a class="navbar-links__item" href="#">Deals</a>
-<a class="navbar-links__item" href="#">About</a>
+<a class="navbar-links__item navbar-links__item--active" href="products.html">Products</a>
 </nav>
 <div class="search-container" id="searchContainer">
 <form class="search-container__form" role="search">
@@ -42,10 +39,6 @@
 <button aria-label="Toggle search" class="navbar__search-toggle" id="searchToggle">
 <i class="fa-solid fa-magnifying-glass"></i>
 </button>
-<a aria-label="Wishlist" class="navbar-actions__btn navbar-actions__btn--wishlist" href="wishlist.html">
-<i class="fa-regular fa-heart"></i>
-<span class="navbar-actions__count" id="wishlistCount">3</span>
-</a>
 <a aria-label="Cart" class="navbar-actions__btn navbar-actions__btn--cart" href="cart.html">
 <i class="fa-solid fa-bag-shopping"></i>
 <span class="navbar-actions__count" id="cartCount">2</span>
@@ -68,7 +61,7 @@
 <div>
 <h1 class="page-heading__title">Shop All Products</h1>
 </div>
-<span class="page-heading__count">Showing 9 of 128 products</span>
+<span class="page-heading__count">Showing products</span>
 </div>
 <div class="products-layout">
 <!-- ============================ FILTER SIDEBAR ============================ -->
@@ -87,33 +80,27 @@
 <label class="filter-checkbox">
 <input name="category" type="radio" value="electronics"/>
                 Electronics
-                <span class="filter-checkbox__count">1,240</span>
-</label>
+              </label>
 <label class="filter-checkbox">
 <input name="category" type="radio" value="fashion"/>
                 Fashion
-                <span class="filter-checkbox__count">3,802</span>
-</label>
+              </label>
 <label class="filter-checkbox">
 <input name="category" type="radio" value="footwear"/>
                 Footwear
-                <span class="filter-checkbox__count">640</span>
-</label>
+              </label>
 <label class="filter-checkbox">
 <input name="category" type="radio" value="home-living"/>
                 Home &amp; Living
-                <span class="filter-checkbox__count">960</span>
-</label>
+              </label>
 <label class="filter-checkbox">
 <input name="category" type="radio" value="sports"/>
                 Sports
-                <span class="filter-checkbox__count">410</span>
-</label>
+              </label>
 <label class="filter-checkbox">
 <input name="category" type="radio" value="beauty"/>
                 Beauty
-                <span class="filter-checkbox__count">720</span>
-</label>
+              </label>
 </div>
 </div>
 <div class="filter-group">
@@ -137,80 +124,27 @@
 <label class="filter-checkbox">
 <input name="brand" type="radio" value="Noise"/>
                 Noise
-                <span class="filter-checkbox__count">64</span>
-</label>
+              </label>
 <label class="filter-checkbox">
 <input name="brand" type="radio" value="Boat"/>
                 Boat
-                <span class="filter-checkbox__count">86</span>
-</label>
+              </label>
 <label class="filter-checkbox">
 <input name="brand" type="radio" value="Puma"/>
                 Puma
-                <span class="filter-checkbox__count">112</span>
-</label>
-<label class="filter-checkbox">
-<input name="brand" type="radio" value="Wildcraft"/>
-                Wildcraft
               </label>
 <label class="filter-checkbox">
 <input name="brand" type="radio" value="H&amp;M"/>
                 H&amp;M
-                <span class="filter-checkbox__count">203</span>
-</label>
+              </label>
 <label class="filter-checkbox">
 <input name="brand" type="radio" value="Prestige"/>
                 Prestige
               </label>
 <label class="filter-checkbox">
-<input name="brand" type="radio" value="Boldfit"/>
-                Boldfit
-              </label>
-<label class="filter-checkbox">
 <input name="brand" type="radio" value="Mamaearth"/>
                 Mamaearth
               </label>
-</div>
-</div>
-<div class="filter-group">
-<div class="filter-group__title">Customer Rating <i class="fa-solid fa-chevron-up"></i></div>
-<div class="filter-group__list">
-<label class="filter-radio">
-<input name="ratingFilter" type="radio" value="5"/>
-<span class="filter-radio__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</span>
-                &amp; up
-              </label>
-<label class="filter-radio">
-<input name="ratingFilter" type="radio" value="4"/>
-<span class="filter-radio__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-</span>
-                &amp; up
-              </label>
-<label class="filter-radio">
-<input name="ratingFilter" type="radio" value="3"/>
-<span class="filter-radio__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-</span>
-                &amp; up
-              </label>
-</div>
-</div>
-<div class="filter-group">
-<div class="filter-group__title">Availability <i class="fa-solid fa-chevron-up"></i></div>
-<div class="filter-group__list">
-<label class="filter-checkbox">
-<input type="checkbox" value="in-stock"/>
-                In Stock
-                <span class="filter-checkbox__count">2,904</span>
-</label>
-<label class="filter-checkbox">
-<input type="checkbox" value="on-sale"/>
-                On Sale
-                <span class="filter-checkbox__count">618</span>
-</label>
 </div>
 </div>
 </aside>
@@ -221,7 +155,7 @@
 <button class="products-toolbar__filter-toggle" id="filterToggle">
 <i class="fa-solid fa-sliders"></i> Filters
               </button>
-<span class="products-toolbar__count" id="productsCount">Showing <strong>9</strong> of <strong>128</strong> results</span>
+<span class="products-toolbar__count" id="productsCount">Showing 0 products</span>
 </div>
 <div class="products-toolbar__right">
 <div class="sort-dropdown">
@@ -230,297 +164,14 @@
 <option value="default">Default</option>
 <option value="price-low-high">Price: Low to High</option>
 <option value="price-high-low">Price: High to Low</option>
-<option value="rating-high-low">Rating: High to Low</option>
 <option value="name-a-z">Name: A to Z</option>
-<option value="name-z-a">Name: Z to A</option>
+
 </select>
-</div>
-<div class="view-toggle">
-<button aria-label="Grid view" class="view-toggle__btn view-toggle__btn--active" data-view="grid">
-<i class="fa-solid fa-table-cells-large"></i>
-</button>
-<button aria-label="List view" class="view-toggle__btn" data-view="list">
-<i class="fa-solid fa-list"></i>
-</button>
 </div>
 </div>
 </div>
 <div class="active-filters" id="activeFilters"></div>
 <div class="products-grid" id="productsGrid">
-<article class="product-card" data-brand="Noise" data-category="electronics" data-id="1" data-name="Noise Cancelling Wireless Headphones" data-old-price="3999" data-price="2499" data-rating="4.5" data-stock="18">
-<div class="product-card__media">
-<span class="badge badge--accent product-card__badge">Best Seller</span>
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="1"><i class="fa-regular fa-heart"></i></button>
-<img alt="Wireless Headphones" class="product-card__image" loading="lazy" src="assets/images/product-1.png"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Electronics</span>
-<h3 class="product-card__title">Noise Cancelling Wireless Headphones</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-</span>
-                  (4.5)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹2,499</span>
-<span class="product-card__price-old">₹3,999</span>
-<span class="product-card__price-off">37% off</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="1"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-<article class="product-card" data-brand="Noise" data-category="electronics" data-id="2" data-name="Smart Fitness Watch Series 5" data-old-price="5499" data-price="4199" data-rating="4.0" data-stock="12">
-<div class="product-card__media">
-<span class="badge badge--success product-card__badge">New</span>
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="2"><i class="fa-regular fa-heart"></i></button>
-<img alt="Smart Watch" class="product-card__image" loading="lazy" src="assets/images/product-2.png"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Electronics</span>
-<h3 class="product-card__title">Smart Fitness Watch Series 5</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-</span>
-                  (4.0)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹4,199</span>
-<span class="product-card__price-old">₹5,499</span>
-<span class="product-card__price-off">24% off</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="2"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-<article class="product-card" data-brand="Puma" data-category="footwear" data-id="3" data-name="Men's Air Cushion Running Shoes" data-old-price="2999" data-price="1799" data-rating="5.0" data-stock="25">
-<div class="product-card__media">
-<span class="badge badge--danger product-card__badge">-40%</span>
-<button aria-label="Remove from wishlist" class="product-card__wishlist product-card__wishlist--active" data-id="3"><i class="fa-solid fa-heart"></i></button>
-<img alt="Running Shoes" class="product-card__image" loading="lazy" src="assets/images/product-3.jpg"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Footwear</span>
-<h3 class="product-card__title">Men's Air Cushion Running Shoes</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</span>
-                  (5.0)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹1,799</span>
-<span class="product-card__price-old">₹2,999</span>
-<span class="product-card__price-off">40% off</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="3"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-<article class="product-card" data-brand="Generic" data-category="fashion" data-id="4" data-name="Minimalist Leather Backpack" data-old-price="3299" data-price="3299" data-rating="3.5" data-stock="8">
-<div class="product-card__media">
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="4"><i class="fa-regular fa-heart"></i></button>
-<img alt="Leather Backpack" class="product-card__image" loading="lazy" src="assets/images/product-4.jpg"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Fashion</span>
-<h3 class="product-card__title">Minimalist Leather Backpack</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><i class="fa-regular fa-star"></i>
-</span>
-                  (3.5)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹3,299</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="4"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-<article class="product-card" data-brand="Boat" data-category="electronics" data-id="5" data-name="Portable Bluetooth Speaker 20W" data-old-price="2799" data-price="1999" data-rating="4.2" data-stock="30">
-<div class="product-card__media">
-<span class="badge badge--accent product-card__badge">Trending</span>
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="5"><i class="fa-regular fa-heart"></i></button>
-<img alt="Bluetooth Speaker" class="product-card__image" loading="lazy" src="assets/images/product-5.jpg"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Electronics</span>
-<h3 class="product-card__title">Portable Bluetooth Speaker 20W</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-</span>
-                  (4.2)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹1,999</span>
-<span class="product-card__price-old">₹2,799</span>
-<span class="product-card__price-off">29% off</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="5"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-<article class="product-card" data-brand="H&amp;M" data-category="fashion" data-id="6" data-name="Classic Fit Cotton T-Shirt" data-old-price="899" data-price="599" data-rating="4.1" data-stock="40">
-<div class="product-card__media">
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="6"><i class="fa-regular fa-heart"></i></button>
-<img alt="Cotton T-Shirt" class="product-card__image" loading="lazy" src="assets/images/product-6.jpg"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Fashion</span>
-<h3 class="product-card__title">Classic Fit Cotton T-Shirt</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-</span>
-                  (4.1)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹599</span>
-<span class="product-card__price-old">₹899</span>
-<span class="product-card__price-off">33% off</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="6"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-<article class="product-card" data-brand="Generic" data-category="home-living" data-id="7" data-name="Non-Stick Ceramic Cookware Set" data-old-price="5299" data-price="3899" data-rating="4.6" data-stock="10">
-<div class="product-card__media">
-<span class="badge badge--success product-card__badge">New</span>
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="7"><i class="fa-regular fa-heart"></i></button>
-<img alt="Ceramic Cookware Set" class="product-card__image" loading="lazy" src="assets/images/product-7.jpg"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Home &amp; Living</span>
-<h3 class="product-card__title">Non-Stick Ceramic Cookware Set</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-</span>
-                  (4.6)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹3,899</span>
-<span class="product-card__price-old">₹5,299</span>
-<span class="product-card__price-off">26% off</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="7"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-<article class="product-card" data-brand="Generic" data-category="sports" data-id="8" data-name="Anti-Slip Yoga Mat 6mm" data-old-price="799" data-price="799" data-rating="3.2" data-stock="22">
-<div class="product-card__media">
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="8"><i class="fa-regular fa-heart"></i></button>
-<img alt="Yoga Mat" class="product-card__image" loading="lazy" src="assets/images/product-8.png"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Sports</span>
-<h3 class="product-card__title">Anti-Slip Yoga Mat 6mm</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
-</span>
-                  (3.2)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹799</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="8"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-<article class="product-card" data-brand="Generic" data-category="beauty" data-id="9" data-name="Vitamin C Brightening Face Serum" data-old-price="1199" data-price="899" data-rating="4.8" data-stock="16">
-<div class="product-card__media">
-<span class="badge badge--danger product-card__badge">-25%</span>
-<button aria-label="Add to wishlist" class="product-card__wishlist" data-id="9"><i class="fa-regular fa-heart"></i></button>
-<img alt="Face Serum" class="product-card__image" loading="lazy" src="assets/images/product-9.jpg"/>
-</div>
-<div class="product-card__body">
-<span class="product-card__category">Beauty</span>
-<h3 class="product-card__title">Vitamin C Brightening Face Serum</h3>
-<span class="rating">
-<span class="rating__stars">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</span>
-                  (4.8)
-                </span>
-<div class="product-card__price-row">
-<span class="product-card__price">₹899</span>
-<span class="product-card__price-old">₹1,199</span>
-<span class="product-card__price-off">25% off</span>
-</div>
-</div>
-<div class="product-card__footer">
-<div class="quantity-selector">
-<button aria-label="Decrease quantity" class="quantity-selector__btn" data-action="decrease">-</button>
-<span class="quantity-selector__value" data-quantity="">1</span>
-<button aria-label="Increase quantity" class="quantity-selector__btn" data-action="increase">+</button>
-</div>
-<button class="product-card__add-btn" data-id="9"><i class="fa-solid fa-cart-plus"></i> Add</button>
-</div>
-</article>
-</div>
-<!-- ============================ PAGINATION ============================ -->
-<nav aria-label="Product pagination" class="pagination">
-<button aria-label="Previous page" class="pagination__btn" data-page="prev"><i class="fa-solid fa-chevron-left"></i></button>
-<button class="pagination__btn pagination__btn--active" data-page="1">1</button>
-<button class="pagination__btn" data-page="2">2</button>
-<button class="pagination__btn" data-page="3">3</button>
-<span class="pagination__ellipsis">...</span>
-<button class="pagination__btn" data-page="14">14</button>
-<button aria-label="Next page" class="pagination__btn" data-page="next"><i class="fa-solid fa-chevron-right"></i></button>
-</nav>
 </div>
 </div>
 </div>
@@ -601,6 +252,7 @@
 <i class="fa-solid fa-arrow-up"></i>
 </button>
 
-<script src = "products.js"></script>
+<script type="module" src="./js/products.js"></script>
+
 </body>
 </html>
