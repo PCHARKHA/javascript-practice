@@ -43,24 +43,19 @@ Javascript-Practice/
 └── README.md
 
 🚀 Mini Projects
-01 — To-Do List
 
+01 — To-Do List :
 A simple task management application using JavaScript and DOM manipulation.
 
-02 — Personality Test
-
+02 — Personality Test:
 An interactive quiz application using JavaScript logic, user input, and dynamic results.
 
-03 — Writing Analyzer
-
+03 — Writing Analyzer:
 A text analysis tool that analyzes written content and provides statistics such as word count, sentence count, reading time, vocabulary, repeated words, and more.
 
-04 — Smart Shopping Cart
-
+04 — Smart Shopping Cart:
 An e-commerce shopping cart built with HTML, CSS, and Vanilla JavaScript.
-
-Features include:
-
+Features include:-
 Dynamic product rendering
 Search, filtering & sorting
 Cart management
@@ -70,12 +65,11 @@ Tax & shipping calculations
 Order summary
 Local Storage
 JavaScript modules
-🎯 Purpose
 
+🎯 Purpose
 To strengthen my JavaScript skills through consistent practice and progressively larger projects, moving from individual concepts to building practical applications.
 
 📈 Progress
-
 JavaScript Basics → Core JavaScript → DOM → ES6+ → Advanced JS → Async JS → Real-world Projects
 
 🔧 Tech Stack
