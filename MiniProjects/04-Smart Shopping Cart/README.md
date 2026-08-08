@@ -98,11 +98,9 @@ Work with JavaScript ES6 modules using import and export.
 Separate application logic into multiple JavaScript modules.
 Use localStorage to persist cart data.
 Work with JavaScript arrays and array methods such as find(), filter(), reduce(), sort(), and forEach().
-Use objects to represent products, cart items, and coupons.
 Implement search, filtering, and sorting functionality.
 Implement event delegation for dynamically generated elements.
 Create reusable utility functions for calculations and DOM operations.
-Calculate subtotals, taxes, shipping charges, discounts, and grand totals.
 Implement a coupon system using different coupon types.
 Use custom events for communication between JavaScript modules.
 Build a complete multi-page e-commerce frontend using Vanilla JavaScript.
