@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-card">
+            <div class="form-header">
+                <h1>Create Account</h1>
+                <p>Please fill in the details below</p>
+            </div>
+
+            <form id="registrationForm">
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name">
+                    <small class="error" id="nameError"></small>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="example@email.com">
+                    <small class="error" id="emailError"></small>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter 10-digit phone number">
+                    <small class="error" id="phoneError"></small>
+                </div>
+
+                <!-- Age -->
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" placeholder="Enter your age">
+                    <small class="error" id="ageError"></small>
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="gender" value="male">
+                            Male
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio" name="gender" value="female">
+                            Female
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio" name="gender" value="other">
+                            Other
+                        </label>
+                    </div>
+
+                    <small class="error" id="genderError"></small>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+
+                    <small class="hint">Minimum 8 characters</small>
+                    <small class="error" id="passwordError"></small>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Re-enter your password">
+
+                    <small class="error" id="confirmPasswordError"></small>
+                </div>
+
+                <!-- Terms -->
+                <div class="terms">
+                    <label class="checkbox-option">
+                        <input type="checkbox" id="terms">
+                        <span>I agree to the Terms & Conditions</span>
+                    </label>
+
+                    <small class="error" id="termsError"></small>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" id="submitBtn">Create Account</button>
+
+                <!-- Success Message -->
+                <p class="success" id="successMessage"></p>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
