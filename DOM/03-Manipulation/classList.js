@@ -3,8 +3,6 @@ classList.remove()
 classList.toggle()
 classList.contains()
  */
-
-
 const cLBtn = document.getElementById("classListBtn");
 cLBtn.addEventListener("click",function(event){
     const p1 = document.querySelector(".content");

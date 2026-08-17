@@ -83,19 +83,6 @@ form.addEventListener("submit", function(details) {
         passwordError.textContent = "";
     }
     
-
-    if(confirmPassword.value.length === 0){
-        confirmPasswordError.textContent = "Re-enter password to confirm";
-        isValid = false;
-    }
-    else if (confirmPassword.value !== password.value) {
-        confirmPasswordError.textContent ="Passwords do not match";
-        isValid = false;
-    }
-    else {
-        confirmPasswordError.textContent = "";
-    }
-
     if (!terms.checked) {
         termsError.textContent = "You must agree to the Terms & Conditions";
         isValid = false;

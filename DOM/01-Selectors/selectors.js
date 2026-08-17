@@ -2,10 +2,6 @@ let title = document.getElementById("title");
 let profile = document.getElementById("profile");
 let subjects = document.getElementById("subjects");
 let button = document.getElementById("updateBtn");
-console.log (title);
-console.log(profile);
-console.log(subjects);
-console.log(button);
 
 //querySelector() selects the first element that matches a CSS selector.
 //query selector understands CSS selectors
