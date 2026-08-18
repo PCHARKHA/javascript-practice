@@ -8,8 +8,8 @@ The application analyzes the user's text in real time and provides detailed writ
 
 ## 📸 Preview
 
-![Writing Analyzer](screenshots/writingAnalyzer.png)
-![Writing Analyzer](screenshots/writingAnalyzer1.png)
+![Writing Analyzer](assets/writingAnalyzer.png)
+![Writing Analyzer](assets/writingAnalyzer1.png)
 
 ---
 
